@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="58a19e10-a27a-4b70-bb02-628a5ecf17f6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Article.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ArticleList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArticleList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filter.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,73 +19,56 @@
     <favorites_list name="untitled" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.40470588">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/index.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" selection-start-line="9" selection-end-line="9" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/App.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="561">
-                  <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
-                  <folding>
-                    <element signature="e#0#40#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ArticleList.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/ArticleList.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="459">
-                  <caret line="39" column="186" selection-start-line="39" selection-start-column="186" selection-end-line="39" selection-end-column="186" />
-                  <folding>
-                    <element signature="e#0#39#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Article.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Article.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1496">
-                  <caret line="88" selection-start-line="88" selection-end-line="88" />
-                  <folding>
-                    <element signature="e#0#40#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Filter.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Filter.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="561">
-                  <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArticleList.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ArticleList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="139" column="59" selection-start-line="139" selection-start-column="59" selection-end-line="139" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Article.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Article.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1496">
+              <caret line="88" selection-start-line="88" selection-end-line="88" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -279,7 +260,7 @@
       <workItem from="1539444616995" duration="5945000" />
       <workItem from="1539527339612" duration="11233000" />
       <workItem from="1539583416205" duration="20785000" />
-      <workItem from="1539616451270" duration="9606000" />
+      <workItem from="1539616451270" duration="10598000" />
     </task>
     <task id="LOCAL-00001" summary="не работает">
       <created>1539624275824</created>
@@ -302,11 +283,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539629193055</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="фильтр и кнопка сброса работает&#10;нужно еще реализовать случай когда нет такой выборки, т.е. возвращается пустой массив">
+      <created>1539630331533</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1539630331533</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134184000" />
+    <option name="totallyTimeSpent" value="135176000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -351,7 +339,8 @@
     <MESSAGE value="не работает" />
     <MESSAGE value="исправляю ArticleList" />
     <MESSAGE value="фильтр работает" />
-    <option name="LAST_COMMIT_MESSAGE" value="фильтр работает" />
+    <MESSAGE value="фильтр и кнопка сброса работает&#10;нужно еще реализовать случай когда нет такой выборки, т.е. возвращается пустой массив" />
+    <option name="LAST_COMMIT_MESSAGE" value="фильтр и кнопка сброса работает&#10;нужно еще реализовать случай когда нет такой выборки, т.е. возвращается пустой массив" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -682,8 +671,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ArticleList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="39" column="186" selection-start-line="39" selection-start-column="186" selection-end-line="39" selection-end-column="186" />
+        <state relative-caret-position="425">
+          <caret line="139" column="59" selection-start-line="139" selection-start-column="59" selection-end-line="139" selection-end-column="59" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

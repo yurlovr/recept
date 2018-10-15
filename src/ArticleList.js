@@ -37,7 +37,9 @@ import Filter from './Filter.js'
              <div>
                  <Header/>
                  <div>
-                     <button className="btn btn-success mb-3" style={{marginLeft:45+'%'}} type="button" onClick={this.handleClick}>{this.state.isOpen ? 'Закрыть фильтр':'Открыть фильтр'}</button>
+                     <button className="btn btn-success mb-3" style={{marginLeft:45+'%'}} type="button" onClick={this.handleClick}>
+                         {this.state.openFilter ? 'Закрыть фильтр':'Открыть фильтр'}
+                     </button>
                  </div>
 
                  {this.state.openFilter && <section className="d-flex">
@@ -130,7 +132,7 @@ import Filter from './Filter.js'
         this.setState({
              openFilter: !this.state.openFilter
         });
-    }
+     }
 
     function filterClick () {
 
@@ -151,6 +153,7 @@ import Filter from './Filter.js'
         this.setState( {
             filterRecept: this.filteredRecept
         });
+
     }
 
     function filterClickReset() {
@@ -158,7 +161,13 @@ import Filter from './Filter.js'
 
         this.setState({
             filterRecept:this.filteredRecept
-        })
+        });
+        let fieldFilter = document.querySelector('.fieldset');
+        fieldFilter.querySelector('#receptName').value = '';
+        fieldFilter.querySelector('#receptCategories').value = '';
+        fieldFilter.querySelector('#receptIngridients').value = '';
+        fieldFilter.querySelector('#receptAuthor').value = '';
+        fieldFilter.querySelector('#pop').checked = false;
     }
 
 
