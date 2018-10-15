@@ -9,11 +9,14 @@ import Filter from './Filter.js'
      constructor(props) {
          super(props);
 
-         this.state = {
-             openFilter:false
-         };
 
-         console.log('props',props);
+        this.allRecept = this.props['receptId'];
+        this.filteredRecept = [...this.allRecept];
+
+         this.state = {
+             openFilter:false,
+             filterRecept: this.filteredRecept
+         };
 
 
          this.filterClick = filterClick.bind(this);
@@ -26,7 +29,7 @@ import Filter from './Filter.js'
 
          // const dataRecept = getData(this.props['receptId']);
 
-         let elementList = this.props.receptId.map(recept =>
+         let elementList =  this.state.filterRecept.map(recept =>
              <li key={recept.id} className="mb-3">
                  <Article data={recept}/>
              </li>
@@ -102,7 +105,7 @@ import Filter from './Filter.js'
                              </div>
 
                              <button className="btn btn-success ml-auto mr-3 mb-3" type="submit"
-                                     onClick={filterClick}>Показать
+                                     onClick={this.filterClick}>Показать
                              </button>
 
                          </div>
@@ -119,29 +122,36 @@ import Filter from './Filter.js'
      }
 
  }
-function handleClick(event) {
-    this.setState({
-        openFilter: !this.state.openFilter
-    });
-}
+
+ function handleClick(event) {
+     this.setState({
+         openFilter: !this.state.openFilter
+     });
+ }
+
+    function filterClick (data) {
+        // console.log('tut');
+        let filterObjet = {};
+        let fieldFilter = document.querySelector('.fieldset');
+
+        filterObjet.name = fieldFilter.querySelector('#receptName').value;
+        filterObjet.cat = fieldFilter.querySelector('#receptCategories').value;
+        filterObjet.ingr = fieldFilter.querySelector('#receptIngridients').value;
+        filterObjet.author = fieldFilter.querySelector('#receptAuthor').value;
+
+        fieldFilter.querySelector('#pop').checked === true ?
+            filterObjet.pop = true :
+            filterObjet.pop = false;
+        let filter = new Filter(filterObjet,data);
+        // console.log(this.setState);
+        this.setState( {
+            filterRecept: this.filteredRecept
+        });
+
+    }
 
 
-function filterClick(data) {
-    // console.log('tut');
-    let filterObjet = {};
-    let fieldFilter = document.querySelector('.fieldset');
 
-    filterObjet.name = fieldFilter.querySelector('#receptName').value;
-    filterObjet.cat = fieldFilter.querySelector('#receptCategories').value;
-    filterObjet.ingr = fieldFilter.querySelector('#receptIngridients').value;
-    filterObjet.author = fieldFilter.querySelector('#receptAuthor').value;
 
-    fieldFilter.querySelector('#pop').checked === true ?
-        filterObjet.pop = true :
-        filterObjet.pop = false;
-
-    let filter = new Filter(filterObjet,data);
-
-}
 
 export default ArticleList;
