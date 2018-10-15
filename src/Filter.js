@@ -6,30 +6,34 @@ import Article from "./Article";
 import App from "./App";
 
 
-class Filter extends Component{
-    constructor(props) {
-        super(props);
+// class Filter extends Component{
+//     constructor(props) {
+//         super(props);
+//         console.log('props', props);
+//
+//          this.objData = getData(receptId);
+//          this.receptList = this.filter(this.objData);
+//
+//
+//     }
 
-         this.objData = getData(receptId);
-         this.receptList = this.filter(this.objData);
+   function Filter(data,receptObject) {
 
+        // console.log('obj', data);
 
-    }
-
-   filter(data) {
-
-        // objData = getData(receptId);
 
         let receptFiltered = [];
 
-        let name = this.props.name.toLowerCase();
-        let categories = this.props.cat.toLowerCase();
-        let ingridients = this.props.ingr.toLowerCase();
-        let author = this.props.author.toLowerCase();
-        let pop = this.props.pop;
+        let name = data.name.toLowerCase();
+        let categories = data.cat.toLowerCase();
+        let ingridients = data.ingr.toLowerCase();
+        let author = data.author.toLowerCase();
+        let pop = data.pop;
+
+        // console.log('name ', name,' categories ', categories, ' ing ',ingridients, ' aut ',author,' pop ',pop);
 
 
-        data.forEach(item => {
+        receptObject.forEach(item => {
 
             let lowerItemName = item.name.toLowerCase();
 
@@ -96,7 +100,7 @@ class Filter extends Component{
             console.log('отфильтрованный масств  конецный вариант', receptFiltered);
 
             return receptFiltered;
-        }
+
 
 
 

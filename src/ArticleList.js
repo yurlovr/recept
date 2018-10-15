@@ -98,7 +98,7 @@ import Filter from './Filter.js'
                                  </label>
                              </div>
 
-                             <div className="form-check w-25 justify-content-start pl-5">
+                             <div className="form-check w-25 justify-content-start pl-5 flex-grow-1">
                                  <input type="checkbox" className="form-check-input" id="pop"/>
                                  <label htmlFor="receptPoplular" className="form-check-label">&nbsp;по
                                      популярности</label>
@@ -106,6 +106,10 @@ import Filter from './Filter.js'
 
                              <button className="btn btn-success ml-auto mr-3 mb-3" type="submit"
                                      onClick={this.filterClick}>Показать
+                             </button>
+
+                             <button className="btn btn-success ml-auto mr-3 mb-3" type="submit">
+                                 Сбросить фильтр
                              </button>
 
                          </div>
@@ -142,8 +146,7 @@ import Filter from './Filter.js'
         fieldFilter.querySelector('#pop').checked === true ?
             filterObjet.pop = true :
             filterObjet.pop = false;
-        let filter = new Filter(filterObjet,data);
-        // console.log(this.setState);
+           this.filteredRecept = Filter(filterObjet, this.filteredRecept);
         this.setState( {
             filterRecept: this.filteredRecept
         });
