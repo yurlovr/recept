@@ -86,7 +86,7 @@ class Article extends Component {
         let data = this.props.data;
 
         this.setState({ countLike: +count + 1 });
-        // this.props.data.likes = +count + 1;
+
         let currentCount = +count +1;
         console.log('likes', this.props.data.likes);
         setChangeLikes({currentCount, data});

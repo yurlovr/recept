@@ -20,14 +20,13 @@ import Filter from './Filter.js'
 
 
          this.filterClick = filterClick.bind(this);
+         this.filterClickReset = filterClickReset.bind(this);
          this.handleClick = handleClick.bind(this);
 
      }
 
 
      render() {
-
-         // const dataRecept = getData(this.props['receptId']);
 
          let elementList =  this.state.filterRecept.map(recept =>
              <li key={recept.id} className="mb-3">
@@ -38,7 +37,7 @@ import Filter from './Filter.js'
              <div>
                  <Header/>
                  <div>
-                     <button className="btn btn-success mb-3" style={{marginLeft:45+'%'}} type="button" onClick={this.handleClick}>Открыть фильтр</button>
+                     <button className="btn btn-success mb-3" style={{marginLeft:45+'%'}} type="button" onClick={this.handleClick}>{this.state.isOpen ? 'Закрыть фильтр':'Открыть фильтр'}</button>
                  </div>
 
                  {this.state.openFilter && <section className="d-flex">
@@ -108,7 +107,7 @@ import Filter from './Filter.js'
                                      onClick={this.filterClick}>Показать
                              </button>
 
-                             <button className="btn btn-success ml-auto mr-3 mb-3" type="submit">
+                             <button className="btn btn-success ml-auto mr-3 mb-3" type="submit" onClick={this.filterClickReset}>
                                  Сбросить фильтр
                              </button>
 
@@ -127,14 +126,14 @@ import Filter from './Filter.js'
 
  }
 
- function handleClick(event) {
-     this.setState({
-         openFilter: !this.state.openFilter
-     });
- }
+     function handleClick(event) {
+        this.setState({
+             openFilter: !this.state.openFilter
+        });
+    }
 
-    function filterClick (data) {
-        // console.log('tut');
+    function filterClick () {
+
         let filterObjet = {};
         let fieldFilter = document.querySelector('.fieldset');
 
@@ -146,11 +145,20 @@ import Filter from './Filter.js'
         fieldFilter.querySelector('#pop').checked === true ?
             filterObjet.pop = true :
             filterObjet.pop = false;
-           this.filteredRecept = Filter(filterObjet, this.filteredRecept);
+
+        this.filteredRecept = Filter(filterObjet, this.filteredRecept);
+
         this.setState( {
             filterRecept: this.filteredRecept
         });
+    }
 
+    function filterClickReset() {
+        this.filteredRecept = this.allRecept;
+
+        this.setState({
+            filterRecept:this.filteredRecept
+        })
     }
 
 
