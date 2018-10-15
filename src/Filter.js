@@ -72,7 +72,13 @@
 
         // console.log('отфильтрованный масств  ингридиенты', receptFiltered);
 
-
+        if (receptFiltered.length === 0) {
+            let stringUndefined = ' Увы, но по Вашему запросу ничего не найдено. Попробуйте задать другие параметры фильтрации.';
+            receptFiltered.push( {
+                name:stringUndefined,
+                id: 'none'
+            })
+        }
 
             // console.log('отфильтрованный масств  конецный вариант', receptFiltered);
 

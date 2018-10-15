@@ -27,12 +27,23 @@ import Filter from './Filter.js'
 
 
      render() {
-
-         let elementList =  this.state.filterRecept.map(recept =>
-             <li key={recept.id} className="mb-3">
-                 <Article data={recept}/>
-             </li>
-         );
+         // let elementList;
+         // if (this.state.filterRecept.length === 0) {
+         //    return (
+         //       elementList =
+         //           <li>
+         //            <div className="card container pl-5 mt-5">
+         //                <h2 className="card-title   text-center pt-2 pb-2"> По Вашему запросу ничего не найдено.</h2>
+         //            </div>
+         //           </li>
+         //    )
+         // }   else {
+            let  elementList = this.state.filterRecept.map(recept =>
+                 <li key={recept.id} className="mb-3">
+                     <Article data={recept}/>
+                 </li>
+             );
+         // }
          return (
              <div>
                  <Header/>
@@ -169,8 +180,6 @@ import Filter from './Filter.js'
         fieldFilter.querySelector('#receptAuthor').value = '';
         fieldFilter.querySelector('#pop').checked = false;
     }
-
-
 
 
 
