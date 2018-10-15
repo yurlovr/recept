@@ -1,0 +1,17 @@
+[
+    {
+        "login": "Вася", 
+        "password": "qwerty"
+    }, 
+	
+	{
+        "login": "Петя", 
+        "password": "asdfgh"
+    }, 
+	
+	{
+        "login": "Миша", 
+        "password": "zxcvbn"
+    }
+   
+]

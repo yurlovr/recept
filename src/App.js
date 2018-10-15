@@ -1,28 +1,43 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from  'react';
+import saveData from './SaveData.js';
+import recepts from './data/recepts.json';
+import users from './data/users.json';
+import ArticleList from './ArticleList.js'
+import getData from './GetData.js'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+
+export const receptId = 'my-recept';
+export const usersId = 'my-users';
+
+export default class App extends Component {
+    constructor(props) {
+        super(props);
+
+        this._initSave();
+    }
+
+
+    render () {
+
+        return (
+
+                 <ArticleList receptId={this._initGet()}/>
+
+        )
+    }
+
+    _initSave () {
+       saveData(receptId, recepts); // сохраняем рецепы в localStorage
+       saveData(usersId, users); // сохраняем пользователей в localStorega
+    }
+
+    _initGet () {
+        const dataRecept = getData(receptId);
+        // console.log(dataRecept);
+        return dataRecept;
+    }
+
 }
 
-export default App;
+
+
