@@ -1,24 +1,29 @@
 import React, { Component } from "react";
-import Filter from "../../Components/Filter/Filter.js";
+// import {filterClick ,filterClickReset} from "../../Container/ReceptList/ReceptList";
 
 class FilterRending extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      filterRecept: this.filteredRecept
-    };
+    this.state ={
+      receptName:'',
+      receptCategories:'',
+      receptIngridients:'',
+      receptAuthor:'',
+      pop: false
 
+    }
 
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateValue = this.updateValue.bind(this);
 
-    this.filterClick = this.filterClick.bind(this);
-    this.filterClickReset = this.filterClickReset.bind(this);
-  }
+    }
 
   render() {
+
     return (
       <section className="d-flex">
-        <fieldset
+        <form onSubmit={this.handleSubmit}
           className="w-100 fieldset"
           style={{
             borderWidth: 1 + "px",
@@ -36,6 +41,8 @@ class FilterRending extends Component {
                   className="form-control"
                   id="receptName"
                   placeholder="Название рецепта"
+                  value={this.state.receptName}
+                  onChange={event =>this.updateValue(event)}
                 />
               </label>
             </div>
@@ -43,12 +50,15 @@ class FilterRending extends Component {
             <div className="w-25 mb-3 mt-3">
               <label htmlFor="receptCategories">
                 Категория блюд:&nbsp;
-                <select className="form-control" id="receptCategories">
-                  <option value="" />
+                <select className="form-control" id="receptCategories"
+                        value={this.state.receptCategories}
+                        onChange={event =>this.updateValue(event)}>
+                  <option value=""/>
                   <option value="Первые блюда">Первые блюда</option>
                   <option value="Вторые блюда">Вторые блюда</option>
                   <option value="Пицца">Пицца</option>
                   <option value="Десерты">Десерты</option>
+
                 </select>
               </label>
             </div>
@@ -56,8 +66,10 @@ class FilterRending extends Component {
             <div className="w-25 mb-3 mt-3">
               <label htmlFor="receptIngridients">
                 Тип ингридиента:&nbsp;
-                <select className="form-control" id="receptIngridients">
-                  <option value="" />
+                <select className="form-control" id="receptIngridients"
+                        value={this.state.receptIngridients}
+                        onChange={event =>this.updateValue(event)}>
+                  <option value=""/>
                   <option value="Мясо">Мясо</option>
                   <option value="Свинина">Свинина</option>
                   <option value="Говядина">Говядина</option>
@@ -71,8 +83,10 @@ class FilterRending extends Component {
             <div className="w-25 mb-3 mt-3">
               <label htmlFor="receptAuthor">
                 Автор рецепта:&nbsp;
-                <select className="form-control" id="receptAuthor">
-                  <option value="" />
+                <select className="form-control" id="receptAuthor"
+                        value={this.state.receptAuthor}
+                        onChange={event =>this.updateValue(event)}>
+                  <option value=""/>
                   <option value="Вася">Вася</option>
                   <option value="Петя">Петя</option>
                   <option value="Миша">Миша</option>
@@ -81,7 +95,9 @@ class FilterRending extends Component {
             </div>
 
             <div className="form-check w-25 justify-content-start pl-5 flex-grow-1">
-              <input type="checkbox" className="form-check-input" id="pop" />
+              <input type="checkbox" className="form-check-input" id="pop"
+                     value={this.state.pop}
+                     onChange={event =>this.updateValue(event)}/>
               <label htmlFor="receptPoplular" className="form-check-label">
                 &nbsp;по популярности
               </label>
@@ -90,57 +106,46 @@ class FilterRending extends Component {
             <button
               className="btn btn-success ml-auto mr-3 mb-3"
               type="submit"
-              onClick={this.filterClick}
+              onClick={this.props.funcFilter}
             >
               Показать
             </button>
 
             <button
               className="btn btn-success ml-auto mr-3 mb-3"
-              type="submit"
-              onClick={this.filterClickReset}
+              type="button"
+              onClick={this.props.funcResetFilter}
             >
               Сбросить фильтр
             </button>
           </div>
-        </fieldset>
+        </form>
       </section>
     );
   }
 
-  filterClick() {
-    let filterObjet = {};
-    let fieldFilter = document.querySelector(".fieldset");
-
-    filterObjet.name = fieldFilter.querySelector("#receptName").value;
-    filterObjet.cat = fieldFilter.querySelector("#receptCategories").value;
-    filterObjet.ingr = fieldFilter.querySelector("#receptIngridients").value;
-    filterObjet.author = fieldFilter.querySelector("#receptAuthor").value;
-
-    fieldFilter.querySelector("#pop").checked === true
-      ? (filterObjet.pop = true)
-      : (filterObjet.pop = false);
-
-    this.filteredRecept = Filter(filterObjet, this.filteredRecept);
-
-    this.setState({
-      filterRecept: this.filteredRecept
+  updateValue(e) {
+    console.log('ededed ',e.target.id);
+    let targetId = e.target.id;
+    let target = e.target.value;
+    this.setState ({
+      receptName:'',
+      receptCategories:'',
+      receptIngridients:'',
+      receptAuthor:'',
+      pop: false
     });
-  }
 
-  filterClickReset() {
-    this.filteredRecept = this.allRecept;
+    console.log(' thtth', this.state)
 
-    this.setState({
-      filterRecept: this.filteredRecept
-    });
-    let fieldFilter = document.querySelector(".fieldset");
-    fieldFilter.querySelector("#receptName").value = "";
-    fieldFilter.querySelector("#receptCategories").value = "";
-    fieldFilter.querySelector("#receptIngridients").value = "";
-    fieldFilter.querySelector("#receptAuthor").value = "";
-    fieldFilter.querySelector("#pop").checked = false;
-  }
+
+    console.log('value ', target);
 }
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.inputValue + 'A name was submitted: ' + this.state.inputValue);
+    event.preventDefault();
+  }
 
+
+}
 export default FilterRending;

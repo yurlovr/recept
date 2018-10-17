@@ -1,6 +1,8 @@
 function Filter(data, receptObject) {
   let receptFiltered = [];
 
+  console.log('data', data,' recO ', receptObject);
+
   let name = data.name.toLowerCase();
   let categories = data.cat.toLowerCase();
   let ingridients = data.ingr.toLowerCase();
@@ -65,6 +67,8 @@ function Filter(data, receptObject) {
       id: "none"
     });
   }
+
+  console.log(receptFiltered);
   return receptFiltered;
 }
 
