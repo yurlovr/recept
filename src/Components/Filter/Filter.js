@@ -1,12 +1,10 @@
 function Filter(data, receptObject) {
   let receptFiltered = [];
 
-  console.log('data', data,' recO ', receptObject);
-
-  let name = data.name.toLowerCase();
-  let categories = data.cat.toLowerCase();
-  let ingridients = data.ingr.toLowerCase();
-  let author = data.author.toLowerCase();
+  let name = data.receptName.toLowerCase();
+  let categories = data.receptCategories.toLowerCase();
+  let ingridients = data.receptIngridients.toLowerCase();
+  let author = data.receptAuthor.toLowerCase();
   let pop = data.pop;
 
   receptObject.forEach(item => {

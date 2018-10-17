@@ -20,13 +20,12 @@ class ReceptList extends Component {
     this.filterClick = this.filterClick.bind(this);
     this.filterClickReset = this.filterClickReset.bind(this);
     this.handleClick = this.handleClick.bind(this);
-
   }
 
   render() {
     let elementList = this.state.filterRecept.map(recept => (
       <li key={recept.id} className="mb-3">
-        <Recept data={recept}/>
+        <Recept data={recept} />
       </li>
     ));
 
@@ -35,14 +34,19 @@ class ReceptList extends Component {
         <div>
           <button
             className="btn btn-success mb-3"
-            style={{marginLeft: 45 + "%"}}
+            style={{ marginLeft: 45 + "%" }}
             type="button"
             onClick={this.handleClick}
           >
             {this.state.openFilter ? "Закрыть фильтр" : "Открыть фильтр"}
           </button>
         </div>
-        {this.state.openFilter && <FilterRending funcFilter={this.filterClick} funcResetFilter={this.filterClickReset}/>}{" "}
+        {this.state.openFilter && (
+          <FilterRending
+            funcFilter={this.filterClick}
+            funcResetFilter={this.filterClickReset}
+          />
+        )}{" "}
         {/*// Передать сюда рецепты...*/}
         <ul className="list-unstyled mt-3">{elementList}</ul>
         {/* вернуть сюда новый массив после фильтра*/}
@@ -56,41 +60,19 @@ class ReceptList extends Component {
     });
   }
 
-  filterClick() {
-    let filterObjet = {};
-    let fieldFilter = document.querySelector(".fieldset");
-
-    filterObjet.name = fieldFilter.querySelector("#receptName").value;
-    filterObjet.cat = fieldFilter.querySelector("#receptCategories").value;
-    filterObjet.ingr = fieldFilter.querySelector("#receptIngridients").value;
-    filterObjet.author = fieldFilter.querySelector("#receptAuthor").value;
-
-    fieldFilter.querySelector("#pop").checked === true
-      ? (filterObjet.pop = true)
-      : (filterObjet.pop = false);
-
-    console.log('filterObject ',filterObjet);
-    console.log('this.filteredRecept ',this.props);
-
+  filterClick(filterObjet) {
     this.filteredRecept = Filter(filterObjet, this.filteredRecept);
     this.setState({
       filterRecept: this.filteredRecept
     });
-
   }
 
-   filterClickReset() {
+  filterClickReset() {
     this.filteredRecept = this.allRecept;
 
     this.setState({
       filterRecept: this.filteredRecept
     });
-    let fieldFilter = document.querySelector(".fieldset");
-    fieldFilter.querySelector("#receptName").value = "";
-    fieldFilter.querySelector("#receptCategories").value = "";
-    fieldFilter.querySelector("#receptIngridients").value = "";
-    fieldFilter.querySelector("#receptAuthor").value = "";
-    fieldFilter.querySelector("#pop").checked = false;
   }
 }
 

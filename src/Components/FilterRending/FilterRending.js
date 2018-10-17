@@ -5,25 +5,26 @@ class FilterRending extends Component {
   constructor(props) {
     super(props);
 
-    this.state ={
-      receptName:'',
-      receptCategories:'',
-      receptIngridients:'',
-      receptAuthor:'',
+    this.state = {
+      receptName: "",
+      receptCategories: "",
+      receptIngridients: "",
+      receptAuthor: "",
       pop: false
+    };
 
-    }
+    this.defaultState = this.state;
 
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
     this.updateValue = this.updateValue.bind(this);
-
-    }
+    this.resetValue = this.resetValue.bind(this);
+  }
 
   render() {
-
     return (
       <section className="d-flex">
-        <form onSubmit={this.handleSubmit}
+        <form
+          onSubmit={this.handleSubmit}
           className="w-100 fieldset"
           style={{
             borderWidth: 1 + "px",
@@ -42,7 +43,7 @@ class FilterRending extends Component {
                   id="receptName"
                   placeholder="Название рецепта"
                   value={this.state.receptName}
-                  onChange={event =>this.updateValue(event)}
+                  onChange={event => this.updateValue(event)}
                 />
               </label>
             </div>
@@ -50,15 +51,17 @@ class FilterRending extends Component {
             <div className="w-25 mb-3 mt-3">
               <label htmlFor="receptCategories">
                 Категория блюд:&nbsp;
-                <select className="form-control" id="receptCategories"
-                        value={this.state.receptCategories}
-                        onChange={event =>this.updateValue(event)}>
-                  <option value=""/>
+                <select
+                  className="form-control"
+                  id="receptCategories"
+                  value={this.state.receptCategories}
+                  onChange={event => this.updateValue(event)}
+                >
+                  <option value="" />
                   <option value="Первые блюда">Первые блюда</option>
                   <option value="Вторые блюда">Вторые блюда</option>
                   <option value="Пицца">Пицца</option>
                   <option value="Десерты">Десерты</option>
-
                 </select>
               </label>
             </div>
@@ -66,10 +69,13 @@ class FilterRending extends Component {
             <div className="w-25 mb-3 mt-3">
               <label htmlFor="receptIngridients">
                 Тип ингридиента:&nbsp;
-                <select className="form-control" id="receptIngridients"
-                        value={this.state.receptIngridients}
-                        onChange={event =>this.updateValue(event)}>
-                  <option value=""/>
+                <select
+                  className="form-control"
+                  id="receptIngridients"
+                  value={this.state.receptIngridients}
+                  onChange={event => this.updateValue(event)}
+                >
+                  <option value="" />
                   <option value="Мясо">Мясо</option>
                   <option value="Свинина">Свинина</option>
                   <option value="Говядина">Говядина</option>
@@ -83,10 +89,13 @@ class FilterRending extends Component {
             <div className="w-25 mb-3 mt-3">
               <label htmlFor="receptAuthor">
                 Автор рецепта:&nbsp;
-                <select className="form-control" id="receptAuthor"
-                        value={this.state.receptAuthor}
-                        onChange={event =>this.updateValue(event)}>
-                  <option value=""/>
+                <select
+                  className="form-control"
+                  id="receptAuthor"
+                  value={this.state.receptAuthor}
+                  onChange={event => this.updateValue(event)}
+                >
+                  <option value="" />
                   <option value="Вася">Вася</option>
                   <option value="Петя">Петя</option>
                   <option value="Миша">Миша</option>
@@ -95,26 +104,30 @@ class FilterRending extends Component {
             </div>
 
             <div className="form-check w-25 justify-content-start pl-5 flex-grow-1">
-              <input type="checkbox" className="form-check-input" id="pop"
-                     value={this.state.pop}
-                     onChange={event =>this.updateValue(event)}/>
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="pop"
+                value={this.state.pop}
+                onChange={event => this.updateValue(event)}
+              />
               <label htmlFor="receptPoplular" className="form-check-label">
                 &nbsp;по популярности
               </label>
             </div>
 
-            <button
-              className="btn btn-success ml-auto mr-3 mb-3"
-              type="submit"
-              onClick={this.props.funcFilter}
-            >
-              Показать
-            </button>
+            {/*<button*/}
+            {/*className="btn btn-success ml-auto mr-3 mb-3"*/}
+            {/*type="button"*/}
+            {/*onClick={()=>{this.props.funcFilter(this.state)}}*/}
+            {/*>*/}
+            {/*Показать*/}
+            {/*</button>*/}
 
             <button
-              className="btn btn-success ml-auto mr-3 mb-3"
+              className="btn btn-success mr-5 mb-3"
               type="button"
-              onClick={this.props.funcResetFilter}
+              onClick={this.resetValue}
             >
               Сбросить фильтр
             </button>
@@ -125,27 +138,25 @@ class FilterRending extends Component {
   }
 
   updateValue(e) {
-    console.log('ededed ',e.target.id);
     let targetId = e.target.id;
     let target = e.target.value;
-    this.setState ({
-      receptName:'',
-      receptCategories:'',
-      receptIngridients:'',
-      receptAuthor:'',
-      pop: false
-    });
 
-    console.log(' thtth', this.state)
-
-
-    console.log('value ', target);
-}
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.inputValue + 'A name was submitted: ' + this.state.inputValue);
-    event.preventDefault();
+    this.setState(
+      {
+        ...this.state,
+        [targetId]: target
+      },
+      () => {
+        this.props.funcFilter({ ...this.state });
+      }
+    );
   }
 
-
+  resetValue() {
+    this.setState({
+      ...this.defaultState
+    });
+    this.props.funcResetFilter();
+  }
 }
 export default FilterRending;
