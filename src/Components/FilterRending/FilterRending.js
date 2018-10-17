@@ -136,7 +136,7 @@ class FilterRending extends Component {
       pop: false
     });
 
-    // console.log(' thtth', this.state)
+    console.log(' thtth', this.state)
 
 
     console.log('value ', target);
