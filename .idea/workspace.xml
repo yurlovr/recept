@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="58a19e10-a27a-4b70-bb02-628a5ecf17f6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Filter/Filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Filter/Filter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FilterRending/FilterRending.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FilterRending/FilterRending.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/ReceptList/ReceptList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/ReceptList/ReceptList.js" afterDir="false" />
-    </list>
+    <list default="true" id="58a19e10-a27a-4b70-bb02-628a5ecf17f6" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -38,8 +32,8 @@
       <file leaf-file-name="FilterRending.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/FilterRending/FilterRending.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
+            <state relative-caret-position="986">
+              <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
             </state>
           </provider>
         </entry>
@@ -273,7 +267,7 @@
       <workItem from="1539758316185" duration="14497000" />
       <workItem from="1539781398984" duration="821000" />
       <workItem from="1539782242599" duration="391000" />
-      <workItem from="1539783208142" duration="8407000" />
+      <workItem from="1539783208142" duration="8808000" />
     </task>
     <task id="LOCAL-00001" summary="не работает">
       <created>1539624275824</created>
@@ -324,11 +318,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539719365181</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Пока не работает... нужно собрать все значения в форме в объект и отправить его в родителя, затем вызвать фильтр...">
+      <created>1539797955817</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1539797955817</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170634000" />
+    <option name="totallyTimeSpent" value="171035000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -341,9 +342,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.677686" visible="true" weight="0.105374075" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6742671" visible="true" weight="0.105374075" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32963374" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -351,8 +351,8 @@
       <window_info id="npm" order="2" sideWeight="0.32093665" side_tool="true" weight="0.105374075" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3295964" />
       <window_info id="Structure" order="1" sideWeight="0.32093665" side_tool="true" weight="0.105374075" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.19422863" />
-      <window_info id="Favorites" order="2" sideWeight="0.32231405" side_tool="true" visible="true" weight="0.105374075" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.6592675" />
+      <window_info id="Favorites" order="2" sideWeight="0.3257329" side_tool="true" visible="true" weight="0.105374075" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40288568" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -413,7 +413,8 @@
     <MESSAGE value="добавлен сброс значений в фильтре при нажатии на &quot;Сбросить фильтр&quot;" />
     <MESSAGE value="Доделан вариант фильтра, если ничего не найдено.&#10;Осталось, редактирование рецепта зарегистрированными пользователями" />
     <MESSAGE value="Вносим исправление... вынес section с фильтрами в отдельную компоненту и все сломалось" />
-    <option name="LAST_COMMIT_MESSAGE" value="Вносим исправление... вынес section с фильтрами в отдельную компоненту и все сломалось" />
+    <MESSAGE value="Пока не работает... нужно собрать все значения в форме в объект и отправить его в родителя, затем вызвать фильтр..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Пока не работает... нужно собрать все значения в форме в объект и отправить его в родителя, затем вызвать фильтр..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -738,8 +739,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/FilterRending/FilterRending.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
+        <state relative-caret-position="986">
+          <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
         </state>
       </provider>
     </entry>
