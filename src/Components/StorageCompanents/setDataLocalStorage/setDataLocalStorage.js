@@ -1,8 +1,6 @@
 import { receptId } from "../../../Container/App/App.js";
 
 function setDataLocalStorage(props) {
-  console.log({ props });
-
   let data = JSON.parse(localStorage.getItem(receptId));
   data.forEach(item => {
     if (item.id === props.data.id) {

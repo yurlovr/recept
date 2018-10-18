@@ -59,7 +59,7 @@ class ReceptList extends Component {
   }
 
   filterClick(filterObjet) {
-    this.filteredRecept = Filter(filterObjet, this.filteredRecept);
+    this.filteredRecept = Filter(filterObjet);
     this.setState({
       filterRecept: this.filteredRecept
     });

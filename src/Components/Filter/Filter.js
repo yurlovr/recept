@@ -1,4 +1,7 @@
-function Filter(data, receptObject) {
+import getData from "../StorageCompanents/GetData/GetData";
+import { receptId } from "../../Container/App/App";
+
+function Filter(data) {
   let receptFiltered = [];
 
   let name = data.receptName.toLowerCase();
@@ -6,6 +9,8 @@ function Filter(data, receptObject) {
   let ingridients = data.receptIngridients.toLowerCase();
   let author = data.receptAuthor.toLowerCase();
   let pop = data.likes;
+
+  let receptObject = getData(receptId);
 
   receptObject.forEach(item => {
     let lowerItemName = item.name.toLowerCase();
@@ -66,7 +71,6 @@ function Filter(data, receptObject) {
     });
   }
 
-  console.log(receptFiltered);
   return receptFiltered;
 }
 
