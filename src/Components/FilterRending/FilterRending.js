@@ -10,7 +10,7 @@ class FilterRending extends Component {
       receptCategories: "",
       receptIngridients: "",
       receptAuthor: "",
-      pop: false
+      likes: ""
     };
 
     this.defaultState = this.state;
@@ -103,16 +103,18 @@ class FilterRending extends Component {
               </label>
             </div>
 
-            <div className="form-check w-25 justify-content-start pl-5 flex-grow-1">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="pop"
-                value={this.state.pop}
-                onChange={event => this.updateValue(event)}
-              />
-              <label htmlFor="receptPoplular" className="form-check-label">
-                &nbsp;по популярности
+            <div className="form-check w-25  ml-5 justify-content-between flex-grow-1">
+              <label className="ml-3" htmlFor="receptPoplular">
+                Сортировать:&nbsp;
+                <select
+                  className="form-control ml-3"
+                  id="likes"
+                  value={this.state.likes}
+                  onChange={event => this.updateValue(event)}
+                >
+                  <option value="" />
+                  <option value="по популярности">по популярности</option>
+                </select>
               </label>
             </div>
 
@@ -125,7 +127,7 @@ class FilterRending extends Component {
             {/*</button>*/}
 
             <button
-              className="btn btn-success mr-5 mb-3"
+              className="btn btn-success mr-5 mb-3 mt-3"
               type="button"
               onClick={this.resetValue}
             >
@@ -146,16 +148,22 @@ class FilterRending extends Component {
         ...this.state,
         [targetId]: target
       },
+
       () => {
+        console.log("rfrf", this.state);
         this.props.funcFilter({ ...this.state });
       }
     );
   }
 
   resetValue() {
-    this.setState({
-      ...this.defaultState
-    });
+    this.setState(
+      {
+        ...this.defaultState
+      },
+      () => console.log("rfrf", this.state)
+    );
+
     this.props.funcResetFilter();
   }
 }

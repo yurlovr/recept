@@ -5,7 +5,7 @@ function Filter(data, receptObject) {
   let categories = data.receptCategories.toLowerCase();
   let ingridients = data.receptIngridients.toLowerCase();
   let author = data.receptAuthor.toLowerCase();
-  let pop = data.pop;
+  let pop = data.likes;
 
   receptObject.forEach(item => {
     let lowerItemName = item.name.toLowerCase();

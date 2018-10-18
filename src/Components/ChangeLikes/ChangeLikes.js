@@ -6,6 +6,7 @@ function setChangeLikes(props) {
     count: props.currentCount,
     keyString: "likes"
   };
+
   setDataLocalStorage(objectData);
 }
 

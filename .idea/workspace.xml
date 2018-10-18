@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="58a19e10-a27a-4b70-bb02-628a5ecf17f6" name="Default" comment="" />
+    <list default="true" id="58a19e10-a27a-4b70-bb02-628a5ecf17f6" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ChangeLikes/ChangeLikes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ChangeLikes/ChangeLikes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Filter/Filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Filter/Filter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/FilterRending/FilterRending.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FilterRending/FilterRending.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/StorageCompanents/SaveData/SaveData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/StorageCompanents/SaveData/SaveData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/recept/chiken_w_mushroom.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/recept/chiken_w_potato.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/recept/eng_rostbiff.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/recept/fish_cambala.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/recept/fish_dorado.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/recept/fish_forel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/recept/kazan-kabob.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/recept/pig_lopatka.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/recept/pig_w_brus.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/recept/pig_w_nuts.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/recept/rostbiff_low.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/recept/rostbiff_w_gorch.json" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,14 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ReceptList.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Container/ReceptList/ReceptList.js">
+      <file leaf-file-name="ChangeLikes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/ChangeLikes/ChangeLikes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="74" column="67" lean-forward="true" selection-start-line="74" selection-start-column="67" selection-end-line="74" selection-end-column="67" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -32,8 +48,29 @@
       <file leaf-file-name="FilterRending.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/FilterRending/FilterRending.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
+            <state relative-caret-position="2074">
+              <caret line="122" column="31" lean-forward="true" selection-start-line="122" selection-start-column="31" selection-end-line="122" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Filter.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/Filter/Filter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReceptList.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Container/ReceptList/ReceptList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1071">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,7 +93,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="filter" />
+        <entry key="$PROJECT_DIR$" value="65e5dbb30d344e5302ceb356c3dff5a93b40b570" />
       </map>
     </option>
   </component>
@@ -94,17 +131,17 @@
         <option value="$PROJECT_DIR$/src/StepOfCooking.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/Components/Header/Header.js" />
-        <option value="$PROJECT_DIR$/src/Components/ChangeLikes/ChangeLikes.js" />
         <option value="$PROJECT_DIR$/src/Components/IngridientsList/IngridientsList.js" />
         <option value="$PROJECT_DIR$/src/Components/StepOfCooking/StepOfCooking.js" />
         <option value="$PROJECT_DIR$/src/Components/StorageCompanents/GetData/GetData.js" />
-        <option value="$PROJECT_DIR$/src/Components/StorageCompanents/SaveData/SaveData.js" />
         <option value="$PROJECT_DIR$/src/Components/StorageCompanents/setDataLocalStorage/setDataLocalStorage.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/Container/App/App.js" />
         <option value="$PROJECT_DIR$/src/Container/Recept/Recept.js" />
-        <option value="$PROJECT_DIR$/src/Components/Filter/Filter.js" />
         <option value="$PROJECT_DIR$/src/Container/ReceptList/ReceptList.js" />
+        <option value="$PROJECT_DIR$/src/Components/StorageCompanents/SaveData/SaveData.js" />
+        <option value="$PROJECT_DIR$/src/Container/App/App.js" />
+        <option value="$PROJECT_DIR$/src/Components/ChangeLikes/ChangeLikes.js" />
+        <option value="$PROJECT_DIR$/src/Components/Filter/Filter.js" />
         <option value="$PROJECT_DIR$/src/Components/FilterRending/FilterRending.js" />
       </list>
     </option>
@@ -136,6 +173,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -159,6 +197,20 @@
               <item name="untitled" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Components" type="462c0819:PsiDirectoryNode" />
+              <item name="ChangeLikes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
+              <item name="Filter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
               <item name="FilterRending" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -172,13 +224,26 @@
               <item name="untitled" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Container" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Container" type="462c0819:PsiDirectoryNode" />
+              <item name="Recept" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Container" type="462c0819:PsiDirectoryNode" />
               <item name="ReceptList" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -268,7 +333,8 @@
       <workItem from="1539758316185" duration="14497000" />
       <workItem from="1539781398984" duration="821000" />
       <workItem from="1539782242599" duration="391000" />
-      <workItem from="1539783208142" duration="8808000" />
+      <workItem from="1539783208142" duration="17306000" />
+      <workItem from="1539839980350" duration="3567000" />
     </task>
     <task id="LOCAL-00001" summary="не работает">
       <created>1539624275824</created>
@@ -326,11 +392,32 @@
       <option name="project" value="LOCAL" />
       <updated>1539797955817</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Пока не работает... нужно собрать все значения в форме в объект и отправить его в родителя, затем вызвать фильтр...">
+      <created>1539798177454</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1539798177454</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Пока не работает... нужно собрать все значения в форме в объект и отправить его в родителя, затем вызвать фильтр...">
+      <created>1539798256941</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1539798256941</updated>
+    </task>
+    <task id="LOCAL-00011" summary="фильтры работают... лайки сломались ((">
+      <created>1539805874433</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1539805874433</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171035000" />
+    <option name="totallyTimeSpent" value="183100000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -343,17 +430,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6742671" visible="true" weight="0.105374075" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.67655367" visible="true" weight="0.20864068" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32963374" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32963374" />
-      <window_info id="npm" order="2" sideWeight="0.32093665" side_tool="true" weight="0.105374075" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3295964" />
+      <window_info id="npm" order="2" sideWeight="0.32093665" side_tool="true" weight="0.105374075" />
       <window_info id="Structure" order="1" sideWeight="0.32093665" side_tool="true" weight="0.105374075" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.6592675" />
-      <window_info id="Favorites" order="2" sideWeight="0.3257329" side_tool="true" visible="true" weight="0.105374075" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.21420644" />
+      <window_info id="Favorites" order="2" sideWeight="0.32344633" side_tool="true" visible="true" weight="0.20864068" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40288568" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -415,7 +503,8 @@
     <MESSAGE value="Доделан вариант фильтра, если ничего не найдено.&#10;Осталось, редактирование рецепта зарегистрированными пользователями" />
     <MESSAGE value="Вносим исправление... вынес section с фильтрами в отдельную компоненту и все сломалось" />
     <MESSAGE value="Пока не работает... нужно собрать все значения в форме в объект и отправить его в родителя, затем вызвать фильтр..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Пока не работает... нужно собрать все значения в форме в объект и отправить его в родителя, затем вызвать фильтр..." />
+    <MESSAGE value="фильтры работают... лайки сломались ((" />
+    <option name="LAST_COMMIT_MESSAGE" value="фильтры работают... лайки сломались ((" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -493,83 +582,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/recept/kazan-kabob.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="4" lean-forward="true" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/recept/pig_lopatka.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/recept/pig_w_brus.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/recept/pig_w_nuts.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/recept/rostbiff_low.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/recept/rostbiff_w_gorch.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="47" lean-forward="true" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/recept/chiken_w_potato.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/recept/eng_rostbiff.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/recept/fish_cambala.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/recept/fish_dorado.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/recept/fish_forel.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/recept/kazan-kabob.json" />
+    <entry file="file://$PROJECT_DIR$/src/data/recept/pig_lopatka.json" />
+    <entry file="file://$PROJECT_DIR$/src/data/recept/pig_w_brus.json" />
+    <entry file="file://$PROJECT_DIR$/src/data/recept/pig_w_nuts.json" />
+    <entry file="file://$PROJECT_DIR$/src/data/recept/rostbiff_low.json" />
+    <entry file="file://$PROJECT_DIR$/src/data/recept/rostbiff_w_gorch.json" />
+    <entry file="file://$PROJECT_DIR$/src/data/recept/chiken_w_potato.json" />
+    <entry file="file://$PROJECT_DIR$/src/data/recept/eng_rostbiff.json" />
+    <entry file="file://$PROJECT_DIR$/src/data/recept/fish_cambala.json" />
+    <entry file="file://$PROJECT_DIR$/src/data/recept/fish_dorado.json" />
+    <entry file="file://$PROJECT_DIR$/src/data/recept/fish_forel.json" />
     <entry file="file://$PROJECT_DIR$/src/data/users.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -577,13 +600,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/recept/chiken_w_mushroom.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/recept/chiken_w_mushroom.json" />
     <entry file="file://$PROJECT_DIR$/src/Render.js" />
     <entry file="file://$PROJECT_DIR$/public/image/chiken_w_mushroom.jpg">
       <provider selected="true" editor-type-id="images" />
@@ -651,13 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/ChangeLikes/ChangeLikes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/StorageCompanents/GetData/GetData.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -665,24 +675,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/StorageCompanents/SaveData/SaveData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/IngridientsList/IngridientsList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/StorageCompanents/setDataLocalStorage/setDataLocalStorage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -707,41 +703,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Container/App/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Container/Recept/Recept.js">
+    <entry file="file://$PROJECT_DIR$/src/Components/StorageCompanents/setDataLocalStorage/setDataLocalStorage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Filter/Filter.js">
+    <entry file="file://$PROJECT_DIR$/src/Components/StorageCompanents/SaveData/SaveData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="67" column="7" lean-forward="true" selection-start-line="67" selection-start-column="7" selection-end-line="67" selection-end-column="7" />
+        <state relative-caret-position="170">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Container/ReceptList/ReceptList.js">
+    <entry file="file://$PROJECT_DIR$/src/Container/App/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="74" column="67" lean-forward="true" selection-start-line="74" selection-start-column="67" selection-end-line="74" selection-end-column="67" />
+        <state relative-caret-position="442">
+          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/Recept/Recept.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1655">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/ReceptList/ReceptList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/ChangeLikes/ChangeLikes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Filter/Filter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/FilterRending/FilterRending.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
+        <state relative-caret-position="2074">
+          <caret line="122" column="31" lean-forward="true" selection-start-line="122" selection-start-column="31" selection-end-line="122" selection-end-column="31" />
         </state>
       </provider>
     </entry>
