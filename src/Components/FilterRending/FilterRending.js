@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import {filterClick ,filterClickReset} from "../../Container/ReceptList/ReceptList";
 
 class FilterRending extends Component {
   constructor(props) {
@@ -15,7 +14,6 @@ class FilterRending extends Component {
 
     this.defaultState = this.state;
 
-    // this.handleSubmit = this.handleSubmit.bind(this);
     this.updateValue = this.updateValue.bind(this);
     this.resetValue = this.resetValue.bind(this);
   }
@@ -150,19 +148,15 @@ class FilterRending extends Component {
       },
 
       () => {
-        console.log("rfrf", this.state);
         this.props.funcFilter({ ...this.state });
       }
     );
   }
 
   resetValue() {
-    this.setState(
-      {
-        ...this.defaultState
-      },
-      () => console.log("rfrf", this.state)
-    );
+    this.setState({
+      ...this.defaultState
+    });
 
     this.props.funcResetFilter();
   }

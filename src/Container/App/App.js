@@ -13,31 +13,16 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
-    this._initSave = this._initSave.bind(this);
-    this._initSave();
-    const recepts = this._initGet();
+    saveData(receptId, recepts);
+    saveData(usersId, users);
   }
 
   render() {
     return (
       <div>
         <Header />
-        <ReceptList recepts={recepts} />
+        <ReceptList recepts={getData(receptId)} />
       </div>
     );
-  }
-
-  _initSave() {
-    if (localStorage.getItem(receptId) === null) {
-      saveData(receptId, recepts)
-    }
-    if (localStorage.getItem(usersId) === null) {
-      saveData(usersId, users); // сохраняем пользователей в localStorega
-    }
-  }
-
-  _initGet() {
-    const dataRecept = getData(receptId);
-    return dataRecept;
   }
 }

@@ -7,8 +7,6 @@ class ReceptList extends Component {
   constructor(props) {
     super(props);
 
-    console.log("receptl ", props);
-
     this.allRecept = this.props.recepts;
     this.filteredRecept = [...this.allRecept];
 
