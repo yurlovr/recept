@@ -18,8 +18,12 @@ export default class App extends Component {
       modalOpen: false
     };
 
-    saveData(receptId, recepts);
-    saveData(usersId, users);
+    if (localStorage.getItem(receptId) === null) {
+      saveData(receptId, recepts);
+    }
+    if (localStorage.getItem(usersId) === null) {
+      saveData(usersId, users);
+    }
 
     this.openModal = this.openModal.bind(this);
   }

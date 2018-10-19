@@ -8,7 +8,10 @@ class Modal extends Component {
     this.state = {
       modalClosed: false,
       userLogin: "",
-      userPassword: ""
+      userPassword: "",
+      registration: true, // изменить стили при успешной либо не успешной регистрации
+      registrationNewUser: false,
+      registrationError: false
     };
 
     this.newUser = { ...this.state };
@@ -23,7 +26,7 @@ class Modal extends Component {
     return (
       <div onKeyDown={this.modalCloseEsc}>
         {!this.state.modalClosed && (
-          <div className="" tabIndex="-1" role="dialog">
+          <div tabIndex="-1" role="dialog">
             <div
               className="modal-dialog"
               role="document"
@@ -37,10 +40,18 @@ class Modal extends Component {
               <div className="modal-content">
                 <div
                   className="modal-header"
-                  style={{ backgroundColor: "#c3e6cb" }}
+                  style={
+                    !this.state.registrationError
+                      ? { backgroundColor: "#c3e6cb" }
+                      : { backgroundColor: "#e89c9c" }
+                  }
                 >
                   <h5 className="modal-title">
-                    Регистрация нового пользователя
+                    {!this.state.registrationNewUser
+                      ? "Регистрация нового пользователя"
+                      : this.state.registrationError
+                        ? "Ошибка регистрации пользователя!!!"
+                        : "Вы успешно зарегистрированы!"}
                   </h5>
                   <button
                     type="button"
@@ -53,33 +64,46 @@ class Modal extends Component {
                   </button>
                 </div>
                 <div className="modal-body">
-                  <p className="d-flex flex-column align-items-center">
-                    <label htmlFor="userLogin">
-                      <input
-                        className="mr-3 form-control"
-                        id="userLogin"
-                        type="text"
-                        placeholder="Login"
-                        value={this.state.userLogin}
-                        onChange={this.updateValue}
-                      />
-                    </label>
+                  {!this.state.registrationNewUser ? (
+                    <p className="d-flex flex-column align-items-center">
+                      <label htmlFor="userLogin">
+                        <input
+                          className="mr-3 form-control"
+                          id="userLogin"
+                          type="text"
+                          placeholder="Login"
+                          value={this.state.userLogin}
+                          onChange={this.updateValue}
+                        />
+                      </label>
 
-                    <label htmlFor="usedrPassword">
-                      <input
-                        className="mr-3 form-control"
-                        id="userPassword"
-                        type="password"
-                        placeholder="Password"
-                        value={this.state.userPassword}
-                        onChange={this.updateValue}
-                      />
-                    </label>
-                  </p>
+                      <label htmlFor="usedrPassword">
+                        <input
+                          className="mr-3 form-control"
+                          id="userPassword"
+                          type="password"
+                          placeholder="Password"
+                          value={this.state.userPassword}
+                          onChange={this.updateValue}
+                        />
+                      </label>
+                    </p>
+                  ) : (
+                    <div>
+                      <p className="font-weight-bold">
+                        Ваш логин:&nbsp; {this.newUser.login} <br />
+                        Ваш пароль:&nbsp; Вы его знаете :)
+                      </p>
+                    </div>
+                  )}
                 </div>
                 <div
                   className="modal-footer"
-                  style={{ backgroundColor: "#c3e6cb" }}
+                  style={
+                    !this.state.registrationError
+                      ? { backgroundColor: "#c3e6cb" }
+                      : { backgroundColor: "#e89c9c" }
+                  }
                 >
                   <button
                     type="button"
@@ -89,13 +113,15 @@ class Modal extends Component {
                   >
                     Закрыть
                   </button>
-                  <button
-                    type="button"
-                    className="btn  btn-outline-success"
-                    onClick={this.addNewUser}
-                  >
-                    Зарегистрироваться
-                  </button>
+                  {this.state.registration && (
+                    <button
+                      type="button"
+                      className="btn  btn-outline-success"
+                      onClick={this.addNewUser}
+                    >
+                      Зарегистрироваться
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
@@ -160,8 +186,15 @@ class Modal extends Component {
   addNewUser() {
     let registration = NewUser(this.newUser);
     if (registration) {
-      alert("Вы успешно зарегистрировались");
-      this.modalClose();
+      this.setState({
+        registration: false,
+        registrationNewUser: !this.state.registrationNewUser
+      });
+    } else {
+      this.setState({
+        registration: false,
+        registrationError: true
+      });
     }
   }
 }
