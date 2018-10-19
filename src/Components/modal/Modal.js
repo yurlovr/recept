@@ -88,7 +88,16 @@ class Modal extends Component {
                         />
                       </label>
                     </p>
-                  ) : (
+                  ) : this.state.registrationError ?
+                   (
+                    <div>
+                      <p className="font-weight-bold">
+                        Пользователь с таким Login
+                        уже зарегистрирован!<br/>
+                        Придумайте другой Login.
+                      </p>
+                    </div>
+                    ):(
                     <div>
                       <p className="font-weight-bold">
                         Ваш логин:&nbsp; {this.newUser.login} <br />
@@ -188,12 +197,14 @@ class Modal extends Component {
     if (registration) {
       this.setState({
         registration: false,
-        registrationNewUser: !this.state.registrationNewUser
+        registrationNewUser: true
       });
     } else {
       this.setState({
         registration: false,
-        registrationError: true
+        registrationError: true,
+        registrationNewUser: true
+
       });
     }
   }

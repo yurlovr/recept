@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="58a19e10-a27a-4b70-bb02-628a5ecf17f6" name="Default" comment="&#10;настроить закрытие модалки по esc&#10;сделать сообщение об ошибке в регистрации&#10;сделать автоматический вход после регистрации...">
+    <list default="true" id="58a19e10-a27a-4b70-bb02-628a5ecf17f6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/StorageCompanents/SaveData/SaveData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/StorageCompanents/SaveData/SaveData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/modal/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/modal/Modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/App/App.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,8 +32,8 @@
       <file leaf-file-name="Modal.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/modal/Modal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="67" column="73" lean-forward="true" selection-start-line="67" selection-start-column="73" selection-end-line="67" selection-end-column="73" />
+            <state relative-caret-position="130">
+              <caret line="96" column="48" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -326,7 +324,7 @@
       <workItem from="1539839980350" duration="20192000" />
       <workItem from="1539883487340" duration="7184000" />
       <workItem from="1539930834764" duration="18696000" />
-      <workItem from="1539954511697" duration="5154000" />
+      <workItem from="1539954511697" duration="6267000" />
     </task>
     <task id="LOCAL-00001" summary="не работает">
       <created>1539624275824</created>
@@ -447,11 +445,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539951305860</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="&#10;настроить закрытие модалки по esc&#10;сделать сообщение об ошибке в регистрации&#10;сделать автоматический вход после регистрации...">
+      <created>1539968930417</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1539968930419</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230759000" />
+    <option name="totallyTimeSpent" value="231872000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -544,7 +549,8 @@
     <MESSAGE value="Вход пользователя сделан" />
     <MESSAGE value="настроить сохранение пользователя в локалсторидж&#10;настроить закрытие модалки по esc&#10;сделать сообщение об успешной регистрации вместо алерта&#10;сделать сообщение об ошибке в регистрации&#10;сделать автоматический вход после регистрации" />
     <MESSAGE value="настроить сохранение пользователя в локалсторидж&#10;настроить закрытие модалки по esc&#10;сделать сообщение об успешной регистрации вместо алерта&#10;сделать сообщение об ошибке в регистрации&#10;сделать автоматический вход после регистрации..." />
-    <option name="LAST_COMMIT_MESSAGE" value="настроить сохранение пользователя в локалсторидж&#10;настроить закрытие модалки по esc&#10;сделать сообщение об успешной регистрации вместо алерта&#10;сделать сообщение об ошибке в регистрации&#10;сделать автоматический вход после регистрации..." />
+    <MESSAGE value="&#10;настроить закрытие модалки по esc&#10;сделать сообщение об ошибке в регистрации&#10;сделать автоматический вход после регистрации..." />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;настроить закрытие модалки по esc&#10;сделать сообщение об ошибке в регистрации&#10;сделать автоматический вход после регистрации..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -812,8 +818,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/modal/Modal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="67" column="73" lean-forward="true" selection-start-line="67" selection-start-column="73" selection-end-line="67" selection-end-column="73" />
+        <state relative-caret-position="130">
+          <caret line="96" column="48" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
