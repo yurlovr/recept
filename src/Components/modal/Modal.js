@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NewUser from '../../Components/NewUser/NewUser'
+import NewUser from "../../Components/NewUser/NewUser";
 
 class Modal extends Component {
   constructor(props) {
@@ -11,17 +11,15 @@ class Modal extends Component {
       userPassword: ""
     };
 
-    this.newUser ={...this.state};
+    this.newUser = { ...this.state };
 
     this.modalClose = this.modalClose.bind(this);
     this.modalCloseEsc = this.modalCloseEsc.bind(this);
     this.updateValue = this.updateValue.bind(this);
     this.addNewUser = this.addNewUser.bind(this);
-
   }
 
   render() {
-
     return (
       <div onKeyDown={this.modalCloseEsc}>
         {!this.state.modalClosed && (
@@ -37,8 +35,13 @@ class Modal extends Component {
               }}
             >
               <div className="modal-content">
-                <div className="modal-header" style={{backgroundColor:"#c3e6cb"}}>
-                  <h5 className="modal-title">Регистрация нового пользователя</h5>
+                <div
+                  className="modal-header"
+                  style={{ backgroundColor: "#c3e6cb" }}
+                >
+                  <h5 className="modal-title">
+                    Регистрация нового пользователя
+                  </h5>
                   <button
                     type="button"
                     className="close"
@@ -51,7 +54,6 @@ class Modal extends Component {
                 </div>
                 <div className="modal-body">
                   <p className="d-flex flex-column align-items-center">
-
                     <label htmlFor="userLogin">
                       <input
                         className="mr-3 form-control"
@@ -73,10 +75,12 @@ class Modal extends Component {
                         onChange={this.updateValue}
                       />
                     </label>
-
                   </p>
                 </div>
-                <div className="modal-footer" style={{backgroundColor:"#c3e6cb"}}>
+                <div
+                  className="modal-footer"
+                  style={{ backgroundColor: "#c3e6cb" }}
+                >
                   <button
                     type="button"
                     className="btn btn-outline-success"
@@ -85,8 +89,10 @@ class Modal extends Component {
                   >
                     Закрыть
                   </button>
-                  <button type="button" className="btn  btn-outline-success"
-                  onClick={this.addNewUser}
+                  <button
+                    type="button"
+                    className="btn  btn-outline-success"
+                    onClick={this.addNewUser}
                   >
                     Зарегистрироваться
                   </button>
@@ -127,14 +133,13 @@ class Modal extends Component {
     });
   }
 
-  modalCloseEsc (event) {
+  modalCloseEsc(event) {
     if (event.keyCode === 27) {
-      this.modalClose()
+      this.modalClose();
     }
   }
 
   updateValue(e) {
-
     let targetId = e.target.id;
     let target = e.target.value;
 
@@ -144,7 +149,7 @@ class Modal extends Component {
         [targetId]: target
       },
       () => {
-        this.newUser ={
+        this.newUser = {
           login: this.state.userLogin,
           password: this.state.userPassword
         };
@@ -154,9 +159,9 @@ class Modal extends Component {
 
   addNewUser() {
     let registration = NewUser(this.newUser);
-    if(registration) {
-      alert('Вы успешно зарегистрировались');
-      this.modalClose()
+    if (registration) {
+      alert("Вы успешно зарегистрировались");
+      this.modalClose();
     }
   }
 }
