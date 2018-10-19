@@ -1,0 +1,46 @@
+import React, { Component } from "react";
+
+class RegistrationForm extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      modalRegistrationUser: false,
+      modalClosed: false
+    };
+
+    this.registrationUser = this.registrationUser.bind(this);
+  }
+
+  render() {
+    return (
+      <div>
+        {/*{!this.state.modalRegistrationUser && (*/}
+        <a
+          className="pt-2  alert-success"
+          href="#"
+          onClick={this.registrationUser}
+        >
+          Регистрация
+        </a>
+        {/*)}*/}
+      </div>
+    );
+  }
+
+  registrationUser() {
+    this.setState(
+      {
+        modalRegistrationUser: !this.state.modalRegistrationUser,
+        modalClosed: !this.state.modalClosed
+      },
+      () => {
+        this.props.data(this.state.modalClosed);
+        this.setState({
+          modalClosed: false
+        });
+      }
+    );
+  }
+}
+export default RegistrationForm;

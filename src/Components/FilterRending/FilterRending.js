@@ -22,7 +22,6 @@ class FilterRending extends Component {
     return (
       <section className="d-flex">
         <form
-          onSubmit={this.handleSubmit}
           className="w-100 fieldset"
           style={{
             borderWidth: 1 + "px",

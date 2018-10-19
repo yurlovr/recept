@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CheckUser from "../CheckUser/CheckUser";
+import RegistrationForm from "../RegistrationForm/RegistrationForm";
 
 class LoginForm extends Component {
   constructor(props) {
@@ -67,9 +68,7 @@ class LoginForm extends Component {
 
         <div className="d-flex justify-content-between w-100 mt-2 align-items-baseline">
           {this.state.regShow && (
-            <a className="pt-2  alert-success" href="#">
-              Регистрация
-            </a>
+           <RegistrationForm data={this.props.data}/>
           )}
           {!this.state.regShow && (
             <p className="mr-2" style={{marginTop:8+'px'}} > Вы вошли как: {this.state.userLogin}</p>

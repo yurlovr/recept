@@ -1,10 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import saveData from "../../Components/StorageCompanents/SaveData/SaveData.js";
 import recepts from "../../data/recepts.json";
 import users from "../../data/users.json";
 import ReceptList from "../ReceptList/ReceptList.js";
 import getData from "../../Components/StorageCompanents/GetData/GetData.js";
 import Header from "../../Components/Header/Header.js";
+import Modal from "../../Components/modal/Modal";
 
 export const receptId = "my-recept";
 export const usersId = "my-users";
@@ -13,16 +14,29 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      modalOpen: false
+    };
+
     saveData(receptId, recepts);
     saveData(usersId, users);
+
+    this.openModal = this.openModal.bind(this);
   }
 
   render() {
     return (
-      <div>
-        <Header />
+      <Fragment>
+        {this.state.modalOpen && <Modal data={this.openModal} />}
+        <Header data={this.openModal} />
         <ReceptList recepts={getData(receptId)} />
-      </div>
+      </Fragment>
     );
+  }
+
+  openModal(data) {
+    this.setState({
+      modalOpen: data
+    });
   }
 }
