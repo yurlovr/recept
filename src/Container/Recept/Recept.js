@@ -8,9 +8,12 @@ class Recept extends Component {
   constructor(props) {
     super(props);
 
+    console.log('props Recept', props.user ());
+
     this.state = {
       isOpen: false,
-      countLike: props.data.likes
+      countLike: props.data.likes,
+      user:this.props.user
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -89,7 +92,7 @@ class Recept extends Component {
             </section>
           )}
 
-          <div className="">
+          <div>
             <button
               className="btn btn-outline-success mr-3 mb-3"
               onClick={this.onCountLikes}
@@ -102,6 +105,17 @@ class Recept extends Component {
                 {this.state.countLike}
               </span>
             </p>
+
+            { (this.state.user()) &&(
+
+            <button
+              className="btn btn-outline-success mr-3 mb-3 float-right"
+              style={{marginTop:10+"px"}}
+            >
+              Редактировать
+            </button>
+            )}
+
           </div>
 
           <p className="font-italic">
@@ -109,7 +123,17 @@ class Recept extends Component {
             <span className="font-weight-bold font">
               {this.props.data.author}
             </span>
+
+
+            {this.props.data.redactAuthor && (
+            <span className="ml-5">Отредактировал:&nbsp;
+            <span className="font-weight-bold font">
+              {this.props.data.redactAuthor}
+            </span>
+            </span>
+            )}
           </p>
+
 
           <ul className="list-unstyled d-flex justify-content-start mb-3 font-italic">
             <li className="mr-3">

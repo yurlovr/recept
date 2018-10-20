@@ -15,7 +15,8 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      modalOpen: false
+      modalOpen: false,
+      user:false
     };
 
     if (localStorage.getItem(receptId) === null) {
@@ -26,14 +27,16 @@ export default class App extends Component {
     }
 
     this.openModal = this.openModal.bind(this);
+    this.userEnter = this.userEnter.bind(this);
+    this.userIsOn = this.userIsOn.bind(this);
   }
 
   render() {
     return (
       <Fragment>
         {this.state.modalOpen && <Modal data={this.openModal} />}
-        <Header data={this.openModal} />
-        <ReceptList recepts={getData(receptId)} />
+        <Header data={this.openModal} user ={this.userEnter}  />
+        <ReceptList recepts={getData(receptId)} user = {this.userIsOn} />
       </Fragment>
     );
   }
@@ -43,4 +46,23 @@ export default class App extends Component {
       modalOpen: data
     });
   }
+
+  userEnter (data) {
+    if(data) {
+      console.log('userEnterApp', data);
+      this.setState({
+        user: data
+      }, () =>{console.log('this.state.user App ',this.state.user)});
+    } else {
+      console.log('userEnterApp', data);
+      this.setState({
+        user: false
+      });
+    }
+  }
+
+  userIsOn () {
+    return this.state.user;
+  }
+
 }

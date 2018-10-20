@@ -25,6 +25,6 @@ export default function CheckUser(userData) {
     userData.regShow = false;
     userData.inputShow = false;
   }
-
+  console.log('objectUser LoginForm ',objectUser);
   return objectUser;
 }

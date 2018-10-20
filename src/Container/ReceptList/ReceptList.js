@@ -7,6 +7,8 @@ class ReceptList extends Component {
   constructor(props) {
     super(props);
 
+    console.log('props ReceptList ', props.user);
+
     this.allRecept = this.props.recepts;
     this.filteredRecept = [...this.allRecept];
 
@@ -23,7 +25,7 @@ class ReceptList extends Component {
   render() {
     let elementList = this.state.filterRecept.map(recept => (
       <li key={recept.id} className="mb-3">
-        <Recept data={recept} />
+        <Recept data={recept} user={this.props.user} />
       </li>
     ));
 

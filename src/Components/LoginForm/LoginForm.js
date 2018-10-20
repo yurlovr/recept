@@ -6,6 +6,8 @@ class LoginForm extends Component {
   constructor(props) {
     super(props);
 
+    console.log('propsLoginForm', props);
+
     this.state = {
       userLogin: "",
       userPassword: "",
@@ -89,10 +91,15 @@ class LoginForm extends Component {
     event.preventDefault();
 
     if (this.state.regShow) {
-      this.setState(CheckUser(this.state));
+      this.setState(CheckUser(this.state),
+        ()=>{this.props.user(this.state.userLogin)});
+
     } else {
-      this.setState({
+      this.setState(
+        {
         ...this.defaultState
+        },
+      ()=>{this.props.user(this.state.userLogin)
       });
     }
   }
