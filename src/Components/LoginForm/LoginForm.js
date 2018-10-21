@@ -70,7 +70,7 @@ class LoginForm extends Component {
 
         <div className="d-flex justify-content-between w-100 mt-2 align-items-baseline">
           {this.state.regShow && (
-           <RegistrationForm data={this.props.data}/>
+           <RegistrationForm data={this.props.data} redactRecept={this.props.redactRecept}/>
           )}
           {!this.state.regShow && (
             <p className="mr-2" style={{marginTop:8+'px'}} > Вы вошли как: {this.state.userLogin}</p>

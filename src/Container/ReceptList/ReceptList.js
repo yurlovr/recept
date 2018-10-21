@@ -25,7 +25,7 @@ class ReceptList extends Component {
   render() {
     let elementList = this.state.filterRecept.map(recept => (
       <li key={recept.id} className="mb-3">
-        <Recept data={recept} user={this.props.user} />
+        <Recept data={recept} user={this.props.user} redactRecept={this.props.redactRecept}/>
       </li>
     ));
 

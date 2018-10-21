@@ -8,7 +8,7 @@ class Recept extends Component {
   constructor(props) {
     super(props);
 
-    console.log('props Recept', props.user ());
+    console.log('props Recept', props.redactRecept);
 
     this.state = {
       isOpen: false,
@@ -18,6 +18,7 @@ class Recept extends Component {
 
     this.handleClick = this.handleClick.bind(this);
     this.onCountLikes = this.onCountLikes.bind(this);
+    this.setRecept = this.setRecept.bind(this);
   }
 
   render() {
@@ -111,6 +112,7 @@ class Recept extends Component {
             <button
               className="btn btn-outline-success mr-3 mb-3 float-right"
               style={{marginTop:10+"px"}}
+              onClick={this.setRecept}
             >
               Редактировать
             </button>
@@ -169,6 +171,13 @@ class Recept extends Component {
     this.setState({
       isOpen: !this.state.isOpen
     });
+  }
+
+  setRecept () {
+    console.log('this.props.data.id', this.props.data.id);
+
+
+    this.props.redactRecept(this.props.data.id);
   }
 }
 export default Recept;

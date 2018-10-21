@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import NewUser from "../../Components/NewUser/NewUser";
+import RedactRecept from "../redactRecept/RedactRecept";
 
 class Modal extends Component {
   constructor(props) {
     super(props);
+
+    console.log('props Modal', props);
 
     this.state = {
       modalClosed: false,
@@ -11,7 +14,8 @@ class Modal extends Component {
       userPassword: "",
       registration: true, // изменить стили при успешной либо не успешной регистрации
       registrationNewUser: false,
-      registrationError: false
+      registrationError: false,
+      receptId:this.props.receptId
     };
 
     this.newUser = { ...this.state };
@@ -24,6 +28,7 @@ class Modal extends Component {
 
   render() {
     return (
+      <div className=" " id="exampleModalLong">
       <div onKeyDown={this.modalCloseEsc}>
         {!this.state.modalClosed && (
           <div tabIndex="-1" role="dialog">
@@ -33,9 +38,11 @@ class Modal extends Component {
               style={{
                 position: "fixed",
                 zIndex: 3,
-                top: 30 + "%",
-                left: 40 + "%"
+                left: 40 + "%",
+                overflow:"auto",
+                maxHeight:700+"px"
               }}
+
             >
               <div className="modal-content">
                 <div
@@ -47,11 +54,13 @@ class Modal extends Component {
                   }
                 >
                   <h5 className="modal-title">
-                    {!this.state.registrationNewUser
+                    {this.props.receptId ? "Редактирование рецепта" :
+                    !this.state.registrationNewUser
                       ? "Регистрация нового пользователя"
                       : this.state.registrationError
                         ? "Ошибка регистрации пользователя!!!"
-                        : "Вы успешно зарегистрированы!"}
+                        : "Вы успешно зарегистрированы!"
+                    }
                   </h5>
                   <button
                     type="button"
@@ -64,7 +73,8 @@ class Modal extends Component {
                   </button>
                 </div>
                 <div className="modal-body">
-                  {!this.state.registrationNewUser ? (
+                  {this.props.receptId ? <RedactRecept data={this.props.receptId}/> :
+                  !this.state.registrationNewUser ? (
                     <p className="d-flex flex-column align-items-center">
                       <label htmlFor="userLogin">
                         <input
@@ -127,13 +137,15 @@ class Modal extends Component {
                       className="btn  btn-outline-success"
                       onClick={this.addNewUser}
                     >
-                      Зарегистрироваться
+                      {this.props.receptId ? "Сохранить" :
+                      "Зарегистрироваться"}
                     </button>
                   )}
                 </div>
               </div>
             </div>
           </div>
+
         )}
         {!this.state.modalClosed && (
           <div
@@ -149,6 +161,7 @@ class Modal extends Component {
             }}
           />
         )}
+      </div>
       </div>
     );
   }

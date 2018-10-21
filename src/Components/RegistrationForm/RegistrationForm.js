@@ -4,6 +4,8 @@ class RegistrationForm extends Component {
   constructor(props) {
     super(props);
 
+    console.log('props RegistrationForm', props);
+
     this.state = {
       modalRegistrationUser: false,
       modalClosed: false
@@ -36,6 +38,7 @@ class RegistrationForm extends Component {
       },
       () => {
         this.props.data(this.state.modalClosed);
+        this.props.redactRecept(false);
         this.setState({
           modalClosed: false
         });

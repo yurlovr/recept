@@ -14,7 +14,7 @@ function Header(data) {
         >
           Кулинарная книга
         </h1>
-       <LoginForm  data={data.data} user={data.user}/>
+       <LoginForm  data={data.data} user={data.user} redactRecept={data.redactRecept}/>
       </header>
     </Fragment>
   );
