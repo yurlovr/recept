@@ -43,6 +43,7 @@ class LoginForm extends Component {
             className="btn btn-success  form-control w-auto mb-2"
             style={{marginRight:0+"px!important"}}
             type="button"
+            disabled
           > Добавить рецепт
           </button>
         )}
@@ -64,6 +65,7 @@ class LoginForm extends Component {
             className="btn btn-success  form-control w-auto"
             style={{marginRight:0+"px"}}
             type="button"
+            disabled
           > Редактировать рецепт
           </button>
         )}

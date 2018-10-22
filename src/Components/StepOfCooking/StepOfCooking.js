@@ -78,7 +78,10 @@ class StepOfCooking extends Component {
         [targetId]: target
       },
       () => {
-        console.log({ ...this.state });
+        let arrayStepOfCooking = Object.keys(this.state).map(key => {
+          return this.state[key];
+        });
+        this.props.updateSomeState("cookingStage", arrayStepOfCooking);
       }
     );
   }

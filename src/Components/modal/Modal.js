@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import NewUser from "../../Components/NewUser/NewUser";
 import RedactRecept from "../redactRecept/RedactRecept";
+import getData from "../StorageCompanents/GetData/GetData";
+import { receptId } from "../../Container/App/App";
+import saveData from "../StorageCompanents/SaveData/SaveData";
 
 class Modal extends Component {
   constructor(props) {
     super(props);
 
-    console.log('props Modal', props);
+    console.log("props Modal", this.props.updateReceptList);
 
     this.state = {
       modalClosed: false,
@@ -15,7 +18,8 @@ class Modal extends Component {
       registration: true, // изменить стили при успешной либо не успешной регистрации
       registrationNewUser: false,
       registrationError: false,
-      receptId:this.props.receptId
+      receptId: this.props.receptId,
+      updateRecept: ""
     };
 
     this.newUser = { ...this.state };
@@ -24,144 +28,154 @@ class Modal extends Component {
     this.modalCloseEsc = this.modalCloseEsc.bind(this);
     this.updateValue = this.updateValue.bind(this);
     this.addNewUser = this.addNewUser.bind(this);
+    this.updateRecept = this.updateRecept.bind(this);
+    this.updateReceptInStorage = this.updateReceptInStorage.bind(this);
   }
 
   render() {
     return (
       <div className=" " id="exampleModalLong">
-      <div onKeyDown={this.modalCloseEsc}>
-        {!this.state.modalClosed && (
-          <div tabIndex="-1" role="dialog">
-            <div
-              className="modal-dialog"
-              role="document"
-              style={{
-                position: "fixed",
-                zIndex: 3,
-                left: 40 + "%",
-                overflow:"auto",
-                maxHeight:700+"px"
-              }}
-
-            >
-              <div className="modal-content">
-                <div
-                  className="modal-header"
-                  style={
-                    !this.state.registrationError
-                      ? { backgroundColor: "#c3e6cb" }
-                      : { backgroundColor: "#e89c9c" }
-                  }
-                >
-                  <h5 className="modal-title">
-                    {this.props.receptId ? "Редактирование рецепта" :
-                    !this.state.registrationNewUser
-                      ? "Регистрация нового пользователя"
-                      : this.state.registrationError
-                        ? "Ошибка регистрации пользователя!!!"
-                        : "Вы успешно зарегистрированы!"
+        <div onKeyDown={this.modalCloseEsc}>
+          {!this.state.modalClosed && (
+            <div tabIndex="-1" role="dialog">
+              <div
+                className="modal-dialog"
+                role="document"
+                style={{
+                  position: "fixed",
+                  zIndex: 3,
+                  left: 40 + "%",
+                  overflow: "auto",
+                  maxHeight: 700 + "px"
+                }}
+              >
+                <div className="modal-content">
+                  <div
+                    className="modal-header"
+                    style={
+                      !this.state.registrationError
+                        ? { backgroundColor: "#c3e6cb" }
+                        : { backgroundColor: "#e89c9c" }
                     }
-                  </h5>
-                  <button
-                    type="button"
-                    className="close"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                    onClick={this.modalClose}
                   >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div className="modal-body">
-                  {this.props.receptId ? <RedactRecept data={this.props.receptId}/> :
-                  !this.state.registrationNewUser ? (
-                    <p className="d-flex flex-column align-items-center">
-                      <label htmlFor="userLogin">
-                        <input
-                          className="mr-3 form-control"
-                          id="userLogin"
-                          type="text"
-                          placeholder="Login"
-                          value={this.state.userLogin}
-                          onChange={this.updateValue}
-                        />
-                      </label>
-
-                      <label htmlFor="usedrPassword">
-                        <input
-                          className="mr-3 form-control"
-                          id="userPassword"
-                          type="password"
-                          placeholder="Password"
-                          value={this.state.userPassword}
-                          onChange={this.updateValue}
-                        />
-                      </label>
-                    </p>
-                  ) : this.state.registrationError ? (
-                    <div>
-                      <p className="font-weight-bold">
-                        Пользователь с таким Login уже зарегистрирован!
-                        <br />
-                        Придумайте другой Login.
-                      </p>
-                    </div>
-                  ) : (
-                    <div>
-                      <p className="font-weight-bold">
-                        Ваш логин:&nbsp; {this.newUser.login} <br />
-                        Ваш пароль:&nbsp; Вы его знаете :)
-                      </p>
-                    </div>
-                  )}
-                </div>
-                <div
-                  className="modal-footer"
-                  style={
-                    !this.state.registrationError
-                      ? { backgroundColor: "#c3e6cb" }
-                      : { backgroundColor: "#e89c9c" }
-                  }
-                >
-                  <button
-                    type="button"
-                    className="btn btn-outline-success"
-                    data-dismiss="modal"
-                    onClick={this.modalClose}
-                  >
-                    Закрыть
-                  </button>
-                  {this.state.registration && (
+                    <h5 className="modal-title">
+                      {this.props.receptId
+                        ? "Редактирование рецепта"
+                        : !this.state.registrationNewUser
+                          ? "Регистрация нового пользователя"
+                          : this.state.registrationError
+                            ? "Ошибка регистрации пользователя!!!"
+                            : "Вы успешно зарегистрированы!"}
+                    </h5>
                     <button
                       type="button"
-                      className="btn  btn-outline-success"
-                      onClick={this.addNewUser}
+                      className="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                      onClick={this.modalClose}
                     >
-                      {this.props.receptId ? "Сохранить" :
-                      "Зарегистрироваться"}
+                      <span aria-hidden="true">&times;</span>
                     </button>
-                  )}
+                  </div>
+                  <div className="modal-body">
+                    {this.props.receptId ? (
+                      <RedactRecept
+                        data={this.props.receptId}
+                        user={this.props.user}
+                        updateRecept={this.updateRecept}
+                      />
+                    ) : !this.state.registrationNewUser ? (
+                      <p className="d-flex flex-column align-items-center">
+                        <label htmlFor="userLogin">
+                          <input
+                            className="mr-3 form-control"
+                            id="userLogin"
+                            type="text"
+                            placeholder="Login"
+                            value={this.state.userLogin}
+                            onChange={this.updateValue}
+                          />
+                        </label>
+
+                        <label htmlFor="usedrPassword">
+                          <input
+                            className="mr-3 form-control"
+                            id="userPassword"
+                            type="password"
+                            placeholder="Password"
+                            value={this.state.userPassword}
+                            onChange={this.updateValue}
+                          />
+                        </label>
+                      </p>
+                    ) : this.state.registrationError ? (
+                      <div>
+                        <p className="font-weight-bold">
+                          Пользователь с таким Login уже зарегистрирован!
+                          <br />
+                          Придумайте другой Login.
+                        </p>
+                      </div>
+                    ) : (
+                      <div>
+                        <p className="font-weight-bold">
+                          Ваш логин:&nbsp; {this.newUser.login} <br />
+                          Ваш пароль:&nbsp; Вы его знаете :)
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                  <div
+                    className="modal-footer"
+                    style={
+                      !this.state.registrationError
+                        ? { backgroundColor: "#c3e6cb" }
+                        : { backgroundColor: "#e89c9c" }
+                    }
+                  >
+                    <button
+                      type="button"
+                      className="btn btn-outline-success"
+                      data-dismiss="modal"
+                      onClick={this.modalClose}
+                    >
+                      Закрыть
+                    </button>
+                    {this.state.registration && (
+                      <button
+                        type="button"
+                        className="btn  btn-outline-success"
+                        onClick={
+                          this.props.receptId
+                            ? this.updateReceptInStorage
+                            : this.addNewUser
+                        }
+                      >
+                        {this.props.receptId
+                          ? "Сохранить"
+                          : "Зарегистрироваться"}
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
-        )}
-        {!this.state.modalClosed && (
-          <div
-            style={{
-              opacity: 0.3,
-              backgroundColor: "green",
-              width: 100 + "%",
-              height: 100 + "%",
-              top: 0,
-              left: 0,
-              position: "fixed",
-              zIndex: 2
-            }}
-          />
-        )}
-      </div>
+          )}
+          {!this.state.modalClosed && (
+            <div
+              style={{
+                opacity: 0.3,
+                backgroundColor: "green",
+                width: 100 + "%",
+                height: 100 + "%",
+                top: 0,
+                left: 0,
+                position: "fixed",
+                zIndex: 2
+              }}
+            />
+          )}
+        </div>
       </div>
     );
   }
@@ -218,6 +232,32 @@ class Modal extends Component {
         registrationNewUser: true
       });
     }
+  }
+
+  updateRecept(object) {
+    this.setState({
+      updateRecept: object
+    });
+  }
+
+  updateReceptInStorage() {
+    this.modalClose();
+
+    let object = this.state.updateRecept;
+
+    let allRecepts = getData(receptId);
+
+    allRecepts.forEach(recept => {
+      if (recept.id === object.id) {
+        for (let key in recept) {
+          recept[key] = object[key];
+        }
+      }
+
+      saveData(receptId, allRecepts);
+
+      this.props.updateReceptList(!this.props.updateStateRecetpList);
+    });
   }
 }
 

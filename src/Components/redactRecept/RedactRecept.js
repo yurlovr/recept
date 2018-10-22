@@ -4,6 +4,7 @@ import StepOfCooking from "../../Components/StepOfCooking/StepOfCooking.js";
 import "bootstrap/dist/css/bootstrap.css";
 import getData from "../StorageCompanents/GetData/GetData";
 import { receptId } from "../../Container/App/App";
+import IngridientsForSearch from "../IngridientsForSeach/IngridientsForSearch";
 
 class RedactRecept extends Component {
   constructor(props) {
@@ -19,6 +20,8 @@ class RedactRecept extends Component {
       }
     });
 
+    console.log('THIS', this.data);
+
     this.state = {
       name: this.data.name,
       imageUrl: this.data.imageUrl,
@@ -29,10 +32,20 @@ class RedactRecept extends Component {
       complexity: this.data.complexity,
       categories: this.data.categories,
       description: this.data.description,
-      ingridients: this.data.ingridients
+      ingridients: this.data.ingridients,
+      redactAuthor: this.props.user,
+      redactDate: (new Date().toLocaleDateString()),
+      id: this.data.id,
+      author:this.data.author,
+      bornDate: this.data.bornDate,
+      likes: this.data.likes,
     };
 
+    this.updateRecept = {...this.state};
+    console.log('ITOGO', this.updateRecept);
+
     this.updateValue = this.updateValue.bind(this);
+    this.updateSomeState = this.updateSomeState.bind(this);
 
     console.log("data redactRecept", this.data);
   }
@@ -99,7 +112,7 @@ class RedactRecept extends Component {
           <IngridientsList
             data={this.state.ingridientsCooking}
             redactRecept={true}
-            updateValue={this.updateValue}
+            updateSomeState={this.updateSomeState}
           />
 
           <h4>Пошаговый рецепт приготовления</h4>
@@ -107,7 +120,8 @@ class RedactRecept extends Component {
           <StepOfCooking
             data={this.state.cookingStage}
             redactRecept={true}
-            updateValue={this.updateValue}
+            updateSomeState={this.updateSomeState}
+
           />
 
           <p className="d-flex justify-content-around">
@@ -168,60 +182,13 @@ class RedactRecept extends Component {
           </p>
           <p>
             <label htmlFor="ingridients">
-              Ингридиенты для поиска:&nbsp;
-              <input
-                className="mr-3 form-control"
-                style={{ width: 375 + "px" }}
-                id="ingridients"
-                type="text"
-                value={this.state.ingridients}
-                onChange={this.updateValue}
-              />
+              Ингридиенты для поиска:&nbsp;(через ",")
+              <IngridientsForSearch
+                data={this.state.ingridients}
+                updateSomeState={this.updateSomeState}/>
             </label>
           </p>
         </section>
-
-        {/*<div>*/}
-        {/*<button*/}
-        {/*className="btn btn-outline-success mr-3 mb-3"*/}
-        {/*onClick={this.onCountLikes}*/}
-        {/*>*/}
-        {/*Like : {this.state.countLike}*/}
-        {/*</button>*/}
-        {/*<p className="d-inline-block align-middle">*/}
-        {/*Популярность рецепта:&nbsp;*/}
-        {/*<span className="font-italic font-weight-bold">*/}
-        {/*{this.state.countLike}*/}
-        {/*</span>*/}
-        {/*</p>*/}
-
-        {/*{ (this.state.user()) &&(*/}
-
-        {/*<button*/}
-        {/*className="btn btn-outline-success mr-3 mb-3 float-right"*/}
-        {/*style={{marginTop:10+"px"}}*/}
-        {/*onClick={this.setRecept}*/}
-        {/*>*/}
-        {/*Редактировать*/}
-        {/*</button>*/}
-        {/*)}*/}
-
-        {/*</div>*/}
-
-        {/*<p className="font-italic">*/}
-        {/*Автор рецепта:&nbsp;*/}
-        {/*<span className="font-weight-bold font">*/}
-        {/*{this.props.data.author}*/}
-        {/*</span>*/}
-
-        {/*{this.props.data.redactAuthor && (*/}
-        {/*<span className="ml-5">Отредактировал:&nbsp;*/}
-        {/*<span className="font-weight-bold font">*/}
-        {/*{this.props.data.redactAuthor}*/}
-        {/*</span>*/}
-        {/*</span>*/}
-        {/*)}*/}
-        {/*</p>*/}
       </div>
     );
   }
@@ -237,9 +204,28 @@ class RedactRecept extends Component {
         [targetId]: target
       },
       () => {
-        console.log('this.state REDACT___FORM',{ ...this.state });
+        this.updateRecept = {...this.state};
+        return (
+          this.props.updateRecept(this.updateRecept)
+        )
       }
     );
   }
+
+  updateSomeState (state, value) {
+
+    this.setState ({
+      [state]:value
+    },
+      () => {
+        this.updateRecept = {...this.state};
+        return (
+          this.props.updateRecept(this.updateRecept)
+        )
+      }
+    );
+  }
+
+
 }
 export default RedactRecept;

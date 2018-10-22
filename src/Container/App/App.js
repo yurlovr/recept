@@ -16,8 +16,9 @@ export default class App extends Component {
 
     this.state = {
       modalOpen: false,
-      user:false,
-      receptId:''
+      user: false,
+      receptId: "",
+      updateReceptList: false
     };
 
     if (localStorage.getItem(receptId) === null) {
@@ -31,51 +32,89 @@ export default class App extends Component {
     this.userEnter = this.userEnter.bind(this);
     this.userIsOn = this.userIsOn.bind(this);
     this.userRedactRecept = this.userRedactRecept.bind(this);
+    this.updateReceptList = this.updateReceptList.bind(this);
   }
 
   render() {
     return (
       <Fragment>
-        {this.state.modalOpen  && <Modal data={this.openModal} receptId={this.state.receptId} user={this.state.user}/>}
-        <Header data={this.openModal} user ={this.userEnter} redactRecept={this.userRedactRecept} />
-        {/*{this.state.userRedactRecept && <Modal data={this.openModal}/>}*/}
-        <ReceptList recepts={getData(receptId)} user = {this.userIsOn} redactRecept={this.userRedactRecept} />
+        {this.state.modalOpen && (
+          <Modal
+            data={this.openModal}
+            receptId={this.state.receptId}
+            user={this.state.user}
+            updateReceptList={this.updateReceptList}
+            updateStateRecetpList={this.state.updateReceptList}
+          />
+        )}
+        <Header
+          data={this.openModal}
+          user={this.userEnter}
+          redactRecept={this.userRedactRecept}
+        />
+        {this.state.updateReceptList && (
+          <ReceptList
+            recepts={getData(receptId)}
+            user={this.userIsOn}
+            redactRecept={this.userRedactRecept}
+          />
+        )}
+        {!this.state.updateReceptList && (
+          <ReceptList
+            recepts={getData(receptId)}
+            user={this.userIsOn}
+            redactRecept={this.userRedactRecept}
+          />
+        )}
       </Fragment>
     );
   }
 
   openModal(data) {
-    this.setState({
-      modalOpen: data
-    },
-      () =>{console.log('this.state.modalOpen App ',this.state.modalOpen)});
+    this.setState(
+      {
+        modalOpen: data
+      },
+      () => {
+        console.log("this.state.modalOpen App ", this.state.modalOpen);
+      }
+    );
   }
 
-  userEnter (data) {
-    if(data) {
-      console.log('userEnterApp', data);
-      this.setState({
-        user: data
-      }, () =>{console.log('this.state.user App ',this.state.user)});
+  userEnter(data) {
+    if (data) {
+      console.log("userEnterApp", data);
+      this.setState(
+        {
+          user: data
+        },
+        () => {
+          console.log("this.state.user App ", this.state.user);
+        }
+      );
     } else {
-      console.log('userEnterApp', data);
+      console.log("userEnterApp", data);
       this.setState({
         user: false
       });
     }
   }
 
-  userIsOn () {
+  userIsOn() {
     return this.state.user;
   }
 
-  userRedactRecept (data) {
-    console.log ('tut');
+  userRedactRecept(data) {
+    console.log("tut");
     this.setState({
-      modalOpen:true,
-      receptId:data
-    },
-      () =>{console.log('this.state.redactRecept App ',this.state.redactRecept)})
+      modalOpen: true,
+      receptId: data
+    });
   }
 
+  updateReceptList(data) {
+    this.setState({
+      updateReceptList: data
+    });
+  }
 }
