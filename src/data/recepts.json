@@ -3,7 +3,8 @@
         "name": "Курица в духовке с картошкой", 
         "author": "Вася", 
 		"bornDate": "08 октября 2018",
-		"redactDate": "08 октября 2018",	
+		"redactDate": "08 октября 2018",
+		"redactAuthor":"",
 		"likes": "5",
         "imageUrl": "./image/chiken_w_potato.jpg",
         "categories": [
@@ -45,7 +46,8 @@
         "name": "Курица фаршированная картофелем и грибами", 
         "author": "Петя", 
 		"bornDate": "08 октября 2018",
-		"redactDate": "08 октября 2018",	
+		"redactDate": "08 октября 2018",
+		"redactAuthor":"",
 		"likes": "2",
         "imageUrl": "./image/chiken_w_mushroom.jpg",
        "categories": [
@@ -86,7 +88,8 @@
         "name": "Казан-кабоб с курицей", 
         "author": "Петя", 
 		"bornDate": "08 октября 2018",
-		"redactDate": "08 октября 2018",	
+		"redactDate": "08 октября 2018",
+		"redactAuthor":"",
 		"likes": "6",
         "imageUrl": "./image/kazan_kabob.jpg",
         "categories": [
@@ -127,7 +130,8 @@
         "name": "Запеченная свиная лопатка", 
         "author": "Миша", 
 		"bornDate": "08 октября 2018",
-		"redactDate": "08 октября 2018",	
+		"redactDate": "08 октября 2018",
+		"redactAuthor":"",
 		"likes": "7",
         "imageUrl": "./image/pig_lopatka.jpg",
         "categories": [
@@ -158,7 +162,8 @@
         "name": "Свинина, нашпигованная фисташками и овощами", 
         "author": "Миша",
 		"bornDate": "08 октября 2018",
-		"redactDate": "08 октября 2018",	
+		"redactDate": "08 октября 2018",
+		"redactAuthor":"",
 		"likes": "4",
         "imageUrl": "./image/pig_w_nuts.jpg",
         "categories": [
@@ -200,7 +205,8 @@
         "name": "Свинина с брусникой", 
         "author": "Миша",
 		"bornDate": "08 октября 2018",
-		"redactDate": "08 октября 2018",	
+		"redactDate": "08 октября 2018",
+		"redactAuthor":"",
 		"likes": "5",
         "imageUrl": "./image/pig_w_brus.jpg",
         "categories": [
@@ -238,7 +244,8 @@
 	{
         "name": "Английский ростбиф", 
         "author": "Вася", "bornDate": "09 октября 2018",
-		"redactDate": "09 октября 2018",	
+		"redactDate": "09 октября 2018",
+		"redactAuthor":"",
 		"likes": "4",
         "imageUrl": "./image/eng_rostbiff.jpg",
         "categories": [
@@ -267,8 +274,9 @@
 	{
         "name": "Ростбиф с острым горчичным соусом", 
         "author": "Вася", 
-		 "bornDate": "09 октября 2018",
-		"redactDate": "09 октября 2018",	
+		"bornDate": "09 октября 2018",
+		"redactDate": "09 октября 2018",
+		"redactAuthor":"",
 		"likes": "3",
         "imageUrl": "./image/rostbiff_w_gorch.jpg",
         "categories": [
@@ -307,7 +315,8 @@
         "name": "Ростбиф, низкотемпературным способом", 
         "author": "Петя", 
 		"bornDate": "09 октября 2018",
-		"redactDate": "09 октября 2018",	
+		"redactDate": "09 октября 2018",
+		"redactAuthor":"",
 		"likes": "4",
         "imageUrl": "./image/rostbiff_low.jpg",
         "categories": [
@@ -347,8 +356,9 @@
 	{
         "name": "Форель в духовке с овощами", 
         "author": "Миша", 
-		 "bornDate": "09 октября 2018",
-		"redactDate": "09 октября 2018",	
+		"bornDate": "09 октября 2018",
+		"redactDate": "09 октября 2018",
+		"redactAuthor":"",
 		"likes": "7",
         "imageUrl": "./image/fish_forel.jpg",
         "categories": [
@@ -386,7 +396,8 @@
         "name": "Камбала, запеченная в пергаменте", 
         "author": "Миша", 
 		"bornDate": "09 октября 2018",
-		"redactDate": "09 октября 2018",	
+		"redactDate": "09 октября 2018",
+		"redactAuthor":"",
 		"likes": "9",
         "imageUrl": "./image/fish_cambala.jpg",
         "categories": [
@@ -423,7 +434,8 @@
         "name": "Дорада, запеченная в духовке",  
         "author": "Вася", 
 		"bornDate": "09 октября 2018",
-		"redactDate": "09 октября 2018",	
+		"redactDate": "09 октября 2018",
+		"redactAuthor":"",
 		"likes": "5",
         "imageUrl": "./image/fish_dorado.jpg",
          "categories": [

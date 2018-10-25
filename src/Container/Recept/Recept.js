@@ -8,13 +8,17 @@ class Recept extends Component {
   constructor(props) {
     super(props);
 
+    // console.log('props Recept', props.redactRecept);
+
     this.state = {
       isOpen: false,
-      countLike: props.data.likes
+      countLike: props.data.likes,
+      user: this.props.user
     };
 
     this.handleClick = this.handleClick.bind(this);
     this.onCountLikes = this.onCountLikes.bind(this);
+    this.setRecept = this.setRecept.bind(this);
   }
 
   render() {
@@ -89,7 +93,7 @@ class Recept extends Component {
             </section>
           )}
 
-          <div className="">
+          <div>
             <button
               className="btn btn-outline-success mr-3 mb-3"
               onClick={this.onCountLikes}
@@ -102,6 +106,16 @@ class Recept extends Component {
                 {this.state.countLike}
               </span>
             </p>
+
+            {this.state.user() && (
+              <button
+                className="btn btn-outline-success mr-3 mb-3 float-right"
+                style={{ marginTop: 10 + "px" }}
+                onClick={this.setRecept}
+              >
+                Редактировать
+              </button>
+            )}
           </div>
 
           <p className="font-italic">
@@ -109,6 +123,14 @@ class Recept extends Component {
             <span className="font-weight-bold font">
               {this.props.data.author}
             </span>
+            {this.props.data.redactAuthor && (
+              <span className="ml-5">
+                Отредактировал:&nbsp;
+                <span className="font-weight-bold font">
+                  {this.props.data.redactAuthor}
+                </span>
+              </span>
+            )}
           </p>
 
           <ul className="list-unstyled d-flex justify-content-start mb-3 font-italic">
@@ -134,11 +156,10 @@ class Recept extends Component {
     let count = this.state.countLike;
     let data = this.props.data;
 
-    this.setState({ countLike: +count + 1 });
+    let currentCount = +count + 1 + "";
 
-    let currentCount = +count + 1;
-    console.log("likes", this.props.data.likes);
     setChangeLikes({ currentCount, data });
+    this.setState({ countLike: +count + 1 });
   };
 
   handleClick(event) {
@@ -146,6 +167,11 @@ class Recept extends Component {
     this.setState({
       isOpen: !this.state.isOpen
     });
+  }
+
+  setRecept() {
+    // console.log('this.props.data.id', this.props.data.id);
+    this.props.redactRecept(this.props.data.id);
   }
 }
 export default Recept;

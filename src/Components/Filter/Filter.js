@@ -1,11 +1,16 @@
-function Filter(data, receptObject) {
+import getData from "../StorageCompanents/GetData/GetData";
+import { receptId } from "../../Container/App/App";
+
+function Filter(data) {
   let receptFiltered = [];
 
-  let name = data.name.toLowerCase();
-  let categories = data.cat.toLowerCase();
-  let ingridients = data.ingr.toLowerCase();
-  let author = data.author.toLowerCase();
-  let pop = data.pop;
+  let name = data.receptName.toLowerCase();
+  let categories = data.receptCategories.toLowerCase();
+  let ingridients = data.receptIngridients.toLowerCase();
+  let author = data.receptAuthor.toLowerCase();
+  let pop = data.likes;
+
+  let receptObject = getData(receptId);
 
   receptObject.forEach(item => {
     let lowerItemName = item.name.toLowerCase();
@@ -24,6 +29,7 @@ function Filter(data, receptObject) {
       if (item.author.toLowerCase() === author) {
         return item;
       }
+      return null;
     });
   }
 
@@ -42,6 +48,7 @@ function Filter(data, receptObject) {
       ) {
         return item;
       }
+      return null;
     });
   }
 
@@ -54,6 +61,7 @@ function Filter(data, receptObject) {
       ) {
         return item;
       }
+      return null;
     });
   }
 
@@ -65,6 +73,7 @@ function Filter(data, receptObject) {
       id: "none"
     });
   }
+
   return receptFiltered;
 }
 

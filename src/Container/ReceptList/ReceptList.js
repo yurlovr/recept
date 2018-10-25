@@ -7,6 +7,8 @@ class ReceptList extends Component {
   constructor(props) {
     super(props);
 
+    // console.log('props ReceptList ', props.user);
+
     this.allRecept = this.props.recepts;
     this.filteredRecept = [...this.allRecept];
 
@@ -23,7 +25,11 @@ class ReceptList extends Component {
   render() {
     let elementList = this.state.filterRecept.map(recept => (
       <li key={recept.id} className="mb-3">
-        <Recept data={recept} />
+        <Recept
+          data={recept}
+          user={this.props.user}
+          redactRecept={this.props.redactRecept}
+        />
       </li>
     ));
 
@@ -39,9 +45,13 @@ class ReceptList extends Component {
             {this.state.openFilter ? "Закрыть фильтр" : "Открыть фильтр"}
           </button>
         </div>
-
-        {this.state.openFilter && <FilterRending recepts={this.filteredRecept} />} {/*// Передать сюда рецепты...*/}
-
+        {this.state.openFilter && (
+          <FilterRending
+            funcFilter={this.filterClick}
+            funcResetFilter={this.filterClickReset}
+            allRecepts={this.props.recepts}
+          />
+        )}{" "}
         <ul className="list-unstyled mt-3">{elementList}</ul>
       </main>
     );
@@ -53,21 +63,8 @@ class ReceptList extends Component {
     });
   }
 
-  filterClick() {
-    let filterObjet = {};
-    let fieldFilter = document.querySelector(".fieldset");
-
-    filterObjet.name = fieldFilter.querySelector("#receptName").value;
-    filterObjet.cat = fieldFilter.querySelector("#receptCategories").value;
-    filterObjet.ingr = fieldFilter.querySelector("#receptIngridients").value;
-    filterObjet.author = fieldFilter.querySelector("#receptAuthor").value;
-
-    fieldFilter.querySelector("#pop").checked === true
-      ? (filterObjet.pop = true)
-      : (filterObjet.pop = false);
-
-    this.filteredRecept = Filter(filterObjet, this.filteredRecept);
-
+  filterClick(filterObjet) {
+    this.filteredRecept = Filter(filterObjet);
     this.setState({
       filterRecept: this.filteredRecept
     });
@@ -79,12 +76,6 @@ class ReceptList extends Component {
     this.setState({
       filterRecept: this.filteredRecept
     });
-    let fieldFilter = document.querySelector(".fieldset");
-    fieldFilter.querySelector("#receptName").value = "";
-    fieldFilter.querySelector("#receptCategories").value = "";
-    fieldFilter.querySelector("#receptIngridients").value = "";
-    fieldFilter.querySelector("#receptAuthor").value = "";
-    fieldFilter.querySelector("#pop").checked = false;
   }
 }
 
