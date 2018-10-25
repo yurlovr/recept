@@ -45,6 +45,7 @@ class ReceptList extends Component {
           <FilterRending
             funcFilter={this.filterClick}
             funcResetFilter={this.filterClickReset}
+            allRecepts={this.props.recepts}
           />
         )}{" "}
         {/*// Передать сюда рецепты...*/}
