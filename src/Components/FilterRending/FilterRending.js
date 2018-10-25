@@ -5,7 +5,7 @@ class FilterRending extends Component {
   constructor(props) {
     super(props);
 
-    console.log("FILTERRENDING", props.allRecepts);
+    // console.log("FILTERRENDING", props.allRecepts);
     this.state = {
       receptName: "",
       receptCategories: "",
@@ -143,7 +143,6 @@ class FilterRending extends Component {
         ...this.state,
         [targetId]: target
       },
-
       () => {
         this.props.funcFilter({ ...this.state });
       }
@@ -154,7 +153,6 @@ class FilterRending extends Component {
     this.setState({
       ...this.defaultState
     });
-
     this.props.funcResetFilter();
   }
 }

@@ -1,10 +1,8 @@
 import React, { Fragment } from "react";
 import LoginForm from "../LoginForm/LoginForm";
 
-
-
 function Header(data) {
-  console.log('data Header', data);
+  // console.log("data Header", data);
   return (
     <Fragment>
       <header className="alert alert-success rounded text-center d-flex justify-content-center">
@@ -14,7 +12,11 @@ function Header(data) {
         >
           Кулинарная книга
         </h1>
-       <LoginForm  data={data.data} user={data.user} redactRecept={data.redactRecept}/>
+        <LoginForm
+          data={data.data}
+          user={data.user}
+          redactRecept={data.redactRecept}
+        />
       </header>
     </Fragment>
   );

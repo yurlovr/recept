@@ -9,10 +9,10 @@ class StepOfCooking extends Component {
     this.st = {};
 
     props.data.forEach((cookingStage, index) => {
-      console.log("ingridients ", cookingStage, " index ", index);
+      // console.log("ingridients ", cookingStage, " index ", index);
       let string = "cookingStage" + index;
       this.st[string] = cookingStage;
-      console.log("this.st", this.st);
+      // console.log("this.st", this.st);
     });
 
     this.state = {
@@ -70,7 +70,7 @@ class StepOfCooking extends Component {
   updateValue(e) {
     let targetId = e.target.id;
     let target = e.target.value;
-    console.log("targetId ", targetId, " taregt ", target);
+    // console.log("targetId ", targetId, " taregt ", target);
 
     this.setState(
       {

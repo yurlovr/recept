@@ -10,7 +10,7 @@ class RedactRecept extends Component {
   constructor(props) {
     super(props);
 
-    console.log("props redactRecept", props);
+    // console.log("props redactRecept", props);
     let recepts = getData(receptId);
     this.data = {};
 
@@ -20,7 +20,7 @@ class RedactRecept extends Component {
       }
     });
 
-    console.log('THIS', this.data);
+    // console.log("THIS", this.data);
 
     this.state = {
       name: this.data.name,
@@ -34,20 +34,20 @@ class RedactRecept extends Component {
       description: this.data.description,
       ingridients: this.data.ingridients,
       redactAuthor: this.props.user,
-      redactDate: (new Date().toLocaleDateString()),
+      redactDate: new Date().toLocaleDateString(),
       id: this.data.id,
-      author:this.data.author,
+      author: this.data.author,
       bornDate: this.data.bornDate,
-      likes: this.data.likes,
+      likes: this.data.likes
     };
 
-    this.updateRecept = {...this.state};
-    console.log('ITOGO', this.updateRecept);
+    this.updateRecept = { ...this.state };
+    // console.log("ITOGO", this.updateRecept);
 
     this.updateValue = this.updateValue.bind(this);
     this.updateSomeState = this.updateSomeState.bind(this);
 
-    console.log("data redactRecept", this.data);
+    // console.log("data redactRecept", this.data);
   }
 
   render() {
@@ -88,6 +88,7 @@ class RedactRecept extends Component {
               id="imageUrl"
               type="file"
               onChange={this.updateValue}
+              disabled
             />
           </label>
         </div>
@@ -121,7 +122,6 @@ class RedactRecept extends Component {
             data={this.state.cookingStage}
             redactRecept={true}
             updateSomeState={this.updateSomeState}
-
           />
 
           <p className="d-flex justify-content-around">
@@ -185,7 +185,8 @@ class RedactRecept extends Component {
               Ингридиенты для поиска:&nbsp;(через ",")
               <IngridientsForSearch
                 data={this.state.ingridients}
-                updateSomeState={this.updateSomeState}/>
+                updateSomeState={this.updateSomeState}
+              />
             </label>
           </p>
         </section>
@@ -196,7 +197,7 @@ class RedactRecept extends Component {
   updateValue(e) {
     let targetId = e.target.id;
     let target = e.target.value;
-    console.log("targetId ", targetId, " taregt ", target);
+    // console.log("targetId ", targetId, " taregt ", target);
 
     this.setState(
       {
@@ -204,28 +205,22 @@ class RedactRecept extends Component {
         [targetId]: target
       },
       () => {
-        this.updateRecept = {...this.state};
-        return (
-          this.props.updateRecept(this.updateRecept)
-        )
+        this.updateRecept = { ...this.state };
+        return this.props.updateRecept(this.updateRecept);
       }
     );
   }
 
-  updateSomeState (state, value) {
-
-    this.setState ({
-      [state]:value
-    },
+  updateSomeState(state, value) {
+    this.setState(
+      {
+        [state]: value
+      },
       () => {
-        this.updateRecept = {...this.state};
-        return (
-          this.props.updateRecept(this.updateRecept)
-        )
+        this.updateRecept = { ...this.state };
+        return this.props.updateRecept(this.updateRecept);
       }
     );
   }
-
-
 }
 export default RedactRecept;

@@ -8,12 +8,12 @@ class Recept extends Component {
   constructor(props) {
     super(props);
 
-    console.log('props Recept', props.redactRecept);
+    // console.log('props Recept', props.redactRecept);
 
     this.state = {
       isOpen: false,
       countLike: props.data.likes,
-      user:this.props.user
+      user: this.props.user
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -107,17 +107,15 @@ class Recept extends Component {
               </span>
             </p>
 
-            { (this.state.user()) &&(
-
-            <button
-              className="btn btn-outline-success mr-3 mb-3 float-right"
-              style={{marginTop:10+"px"}}
-              onClick={this.setRecept}
-            >
-              Редактировать
-            </button>
+            {this.state.user() && (
+              <button
+                className="btn btn-outline-success mr-3 mb-3 float-right"
+                style={{ marginTop: 10 + "px" }}
+                onClick={this.setRecept}
+              >
+                Редактировать
+              </button>
             )}
-
           </div>
 
           <p className="font-italic">
@@ -125,17 +123,15 @@ class Recept extends Component {
             <span className="font-weight-bold font">
               {this.props.data.author}
             </span>
-
-
             {this.props.data.redactAuthor && (
-            <span className="ml-5">Отредактировал:&nbsp;
-            <span className="font-weight-bold font">
-              {this.props.data.redactAuthor}
-            </span>
-            </span>
+              <span className="ml-5">
+                Отредактировал:&nbsp;
+                <span className="font-weight-bold font">
+                  {this.props.data.redactAuthor}
+                </span>
+              </span>
             )}
           </p>
-
 
           <ul className="list-unstyled d-flex justify-content-start mb-3 font-italic">
             <li className="mr-3">
@@ -173,10 +169,8 @@ class Recept extends Component {
     });
   }
 
-  setRecept () {
-    console.log('this.props.data.id', this.props.data.id);
-
-
+  setRecept() {
+    // console.log('this.props.data.id', this.props.data.id);
     this.props.redactRecept(this.props.data.id);
   }
 }

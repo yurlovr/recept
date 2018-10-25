@@ -7,7 +7,7 @@ class ReceptList extends Component {
   constructor(props) {
     super(props);
 
-    console.log('props ReceptList ', props.user);
+    // console.log('props ReceptList ', props.user);
 
     this.allRecept = this.props.recepts;
     this.filteredRecept = [...this.allRecept];
@@ -25,7 +25,11 @@ class ReceptList extends Component {
   render() {
     let elementList = this.state.filterRecept.map(recept => (
       <li key={recept.id} className="mb-3">
-        <Recept data={recept} user={this.props.user} redactRecept={this.props.redactRecept}/>
+        <Recept
+          data={recept}
+          user={this.props.user}
+          redactRecept={this.props.redactRecept}
+        />
       </li>
     ));
 
@@ -48,9 +52,7 @@ class ReceptList extends Component {
             allRecepts={this.props.recepts}
           />
         )}{" "}
-        {/*// Передать сюда рецепты...*/}
         <ul className="list-unstyled mt-3">{elementList}</ul>
-        {/* вернуть сюда новый массив после фильтра*/}
       </main>
     );
   }

@@ -29,6 +29,7 @@ function Filter(data) {
       if (item.author.toLowerCase() === author) {
         return item;
       }
+      return null;
     });
   }
 
@@ -47,6 +48,7 @@ function Filter(data) {
       ) {
         return item;
       }
+      return null;
     });
   }
 
@@ -59,6 +61,7 @@ function Filter(data) {
       ) {
         return item;
       }
+      return null;
     });
   }
 

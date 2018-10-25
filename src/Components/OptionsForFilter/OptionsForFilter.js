@@ -1,9 +1,9 @@
 import React from "react";
 
 export default function OptionsForFilter(data) {
-  console.log(data);
+  // console.log(data);
   let str = data.str;
-  console.log(data.str);
+  // console.log(data.str);
   let optionsSet = new Set();
 
   data.allRecepts.forEach(recept => {

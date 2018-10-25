@@ -74,26 +74,26 @@ export default class App extends Component {
     this.setState(
       {
         modalOpen: data
-      },
-      () => {
-        console.log("this.state.modalOpen App ", this.state.modalOpen);
       }
+      // () => {
+      //   console.log("this.state.modalOpen App ", this.state.modalOpen);
+      // }
     );
   }
 
   userEnter(data) {
     if (data) {
-      console.log("userEnterApp", data);
+      // console.log("userEnterApp", data);
       this.setState(
         {
           user: data
-        },
-        () => {
-          console.log("this.state.user App ", this.state.user);
         }
+        // () => {
+        //   console.log("this.state.user App ", this.state.user);
+        // }
       );
     } else {
-      console.log("userEnterApp", data);
+      // console.log("userEnterApp", data);
       this.setState({
         user: false
       });
@@ -105,7 +105,7 @@ export default class App extends Component {
   }
 
   userRedactRecept(data) {
-    console.log("tut");
+    // console.log("tut");
     this.setState({
       modalOpen: true,
       receptId: data

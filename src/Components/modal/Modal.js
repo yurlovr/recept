@@ -9,7 +9,7 @@ class Modal extends Component {
   constructor(props) {
     super(props);
 
-    console.log("props Modal", this.props.updateReceptList);
+    // console.log("props Modal", this.props.updateReceptList);
 
     this.state = {
       modalClosed: false,
@@ -113,7 +113,7 @@ class Modal extends Component {
                         <p className="font-weight-bold">
                           Пользователь с таким Login уже зарегистрирован!
                           <br />
-                          Придумайте другой Login.
+                          Либо поля регистрации не заполнены!
                         </p>
                       </div>
                     ) : (
@@ -244,7 +244,6 @@ class Modal extends Component {
     this.modalClose();
 
     let object = this.state.updateRecept;
-
     let allRecepts = getData(receptId);
 
     allRecepts.forEach(recept => {

@@ -4,14 +4,11 @@ class IngridientsForSearch extends Component {
   constructor(props) {
     super(props);
 
-    console.log("props IngridientsForSearch ", props.data);
-
+    // console.log("props IngridientsForSearch ", props.data);
     this.string = props.data.join(", ");
-
     this.state = {
       ingridients: this.string
     };
-
     this.updateValue = this.updateValue.bind(this);
   }
 

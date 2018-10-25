@@ -4,15 +4,14 @@ class IngridientsList extends Component {
   constructor(props) {
     super(props);
 
-    console.log("props IngridientsList ", props);
-
+    // console.log("props IngridientsList ", props);
     this.st = {};
 
     props.data.forEach((ingridients, index) => {
-      console.log("ingridients ", ingridients, " index ", index);
+      // console.log("ingridients ", ingridients, " index ", index);
       let string = "ingridientsCooking" + index;
       this.st[string] = ingridients;
-      console.log("this.st", this.st);
+      // console.log("this.st", this.st);
     });
 
     this.state = {
@@ -60,7 +59,7 @@ class IngridientsList extends Component {
   updateValue(e) {
     let targetId = e.target.id;
     let target = e.target.value;
-    console.log("targetId ", targetId, " taregt ", target);
+    // console.log("targetId ", targetId, " taregt ", target);
 
     this.setState(
       {

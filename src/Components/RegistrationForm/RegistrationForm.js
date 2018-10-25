@@ -3,21 +3,16 @@ import React, { Component } from "react";
 class RegistrationForm extends Component {
   constructor(props) {
     super(props);
-
-    console.log('props RegistrationForm', props);
-
+    // console.log('props RegistrationForm', props);
     this.state = {
       modalRegistrationUser: false,
       modalClosed: false
     };
-
     this.registrationUser = this.registrationUser.bind(this);
   }
-
   render() {
     return (
       <div>
-        {/*{!this.state.modalRegistrationUser && (*/}
         <a
           className="pt-2  alert-success"
           href="#"
@@ -25,11 +20,9 @@ class RegistrationForm extends Component {
         >
           Регистрация
         </a>
-        {/*)}*/}
       </div>
     );
   }
-
   registrationUser() {
     this.setState(
       {
